@@ -139,7 +139,7 @@ a:hover { color: var(--red); }
 .faq-answer.open { max-height: 1200px; padding-top: 16px; }
 .faq-answer p { font-size: 0.9rem; color: #777777; line-height: 1.8; margin-bottom: 12px; }
 
-.workflow-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 280px)); gap: 28px; margin: 32px auto 0; justify-content: center; }
+.workflow-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 280px)); gap: 28px; margin: 32px auto 0; justify-content: center; align-items: start; }
 .workflow-card {
   position: relative; display: flex; flex-direction: column; border-radius: 14px;
   overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease;
