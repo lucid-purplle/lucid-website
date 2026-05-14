@@ -5,8 +5,12 @@
    Markup contract:
      - Page contains a single <div class="lightbox">…</div> with
        descendants .lightbox__image and .lightbox__close.
-     - Each trigger has class .howit-screenshot__trigger and contains
-       an <img> child whose src/alt are mirrored into the lightbox.
+     - Each trigger has class .howit-screenshot__trigger or .muse-thumb
+       and contains an <img> child. The img's src/alt is mirrored into
+       the lightbox. If the img has a data-full attribute, the lightbox
+       initially shows the thumb (instant) and preloads the full image,
+       swapping the src once it's ready (so a slow connection never
+       leaves the lightbox blank).
 
    Behaviour:
      - Click trigger → open. Focus moves to close button.
@@ -20,7 +24,7 @@
 
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    var triggers = document.querySelectorAll('.howit-screenshot__trigger');
+    var triggers = document.querySelectorAll('.howit-screenshot__trigger, .muse-thumb');
     var lightbox = document.querySelector('.lightbox');
     if (!lightbox || triggers.length === 0) return;
     var lbImage = lightbox.querySelector('.lightbox__image');
@@ -30,8 +34,23 @@
     function open(triggerEl) {
       var img = triggerEl.querySelector('img');
       if (!img) return;
-      lbImage.src = img.currentSrc || img.src;
+      var thumbSrc = img.currentSrc || img.src;
+      var fullSrc = img.getAttribute('data-full') || thumbSrc;
+      // Show the thumb immediately (zero-latency display)
+      lbImage.src = thumbSrc;
       lbImage.alt = img.alt || '';
+      // If there's a separate full-size image, preload it and swap in
+      // once it's ready. Guard against the user closing the lightbox
+      // before the preload finishes.
+      if (fullSrc !== thumbSrc) {
+        var preloader = new Image();
+        preloader.onload = function () {
+          if (lightbox.classList.contains('lightbox--open')) {
+            lbImage.src = fullSrc;
+          }
+        };
+        preloader.src = fullSrc;
+      }
       previouslyFocused = document.activeElement;
       lightbox.classList.add('lightbox--open');
       lightbox.setAttribute('aria-hidden', 'false');
