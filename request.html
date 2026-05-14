@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Lucid — Lucid.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="workflows-page">
+
+<div class="film-grain"></div>
+<div class="aura aura-violet"></div>
+<div class="aura aura-red"></div>
+<div class="aura aura-violet-2"></div>
+<div class="aura aura-red-2"></div>
+<div class="aura aura-violet-3"></div>
+
+<div class="page-wrapper">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Lucid<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="workflows.html">workflows</a></li>
+      <li><a href="request.html" class="active">request lucid</a></li>
+      <li><a href="faqs.html">faqs</a></li>
+    </ul>
+  </nav>
+  <div class="workflow-detail-page">
+    <h1>Request Lucid</h1>
+    <p class="wf-lead">Need a new workflow, a demo, or help with an AI tool? Tell us what you need.</p>
+    <form id="request-form" onsubmit="handleSubmit(event)">
+      <div class="form-group"><label for="name">Full name</label><input type="text" id="name" name="name" placeholder="First and last name" required></div>
+      <div class="form-group"><label for="team">Team</label><input type="text" id="team" name="team" placeholder="e.g. Marketing, Category, Tech"></div>
+      <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@purplle.com" required></div>
+      <div class="form-group"><label for="request-type">Nature of request</label>
+        <select id="request-type" name="request-type" required>
+          <option value="" disabled selected>Select a request type</option>
+          <option value="demo">Request a tool demo</option>
+          <option value="new-workflow">New workflow request</option>
+          <option value="automation">Automation project</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="description">Describe your request</label>
+        <textarea id="description" name="description" placeholder="What problem are you trying to solve? What does the ideal outcome look like?"></textarea>
+      </div>
+      <div class="form-group"><label for="urgency">Request urgency</label>
+        <select id="urgency" name="urgency">
+          <option value="" disabled selected>How soon do you need this?</option>
+          <option value="next-week">Next week</option>
+          <option value="next-month">Next month</option>
+          <option value="whenever">When the team gets to it</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-red">Submit request</button>
+    </form>
+    <div id="success-message" style="display: none; margin-top: 40px;">
+      <h3 style="color: var(--violet); margin-bottom: 8px;">Request received.</h3>
+      <p style="font-size: 0.9rem; color: #777777;">We'll review this and get back to you. Thanks for reaching out to Lucid.</p>
+    </div>
+  </div>
+  <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('request-form').style.display = 'none';
+  document.getElementById('success-message').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

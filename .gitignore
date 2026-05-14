@@ -1,0 +1,13 @@
+# Local Claude Code state
+.claude/
+
+# Reference/working files — kept on disk, never shipped
+CHAT_CONTEXT.html
+lucid-site.html
+
+# macOS junk
+.DS_Store
+
+# Editor swap files
+*.swp
+*~

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artwork Checker — Lucid.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="workflows-page">
+
+<div class="film-grain"></div>
+<div class="aura aura-violet"></div>
+<div class="aura aura-red"></div>
+<div class="aura aura-violet-2"></div>
+<div class="aura aura-red-2"></div>
+<div class="aura aura-violet-3"></div>
+
+<div class="page-wrapper">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Lucid<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="workflows.html" class="active">workflows</a></li>
+      <li><a href="request.html">request lucid</a></li>
+      <li><a href="faqs.html">faqs</a></li>
+    </ul>
+  </nav>
+  <a href="workflows.html" class="back-link">+ back to workflows</a>
+  <div class="workflow-detail-page">
+    <div class="wf-category">Skill</div>
+    <h1>Artwork Checker</h1>
+    <p class="wf-lead">A Claude skill built for the Hotline (same-day delivery) team that catches errors on packaging artwork before it goes to print. Upload a label, carton, or kit and it flags only the actual issues — FOP, BOP, compliance, copy quality, and manufacturer details.</p>
+    <h2>How to use</h2>
+    <ol>
+      <li>Download the skill folder and add it to your Claude skills directory.</li>
+      <li>Open Claude, upload the artwork as a PDF, and ask for a check — "review this," "is this ready?", "any issues?" all trigger the skill.</li>
+      <li>Claude converts the file, reads both the visual and the extracted text, and runs the full check: FOP elements, net qty, MRP, USP, MADE IN INDIA, copy cleanliness, manufacturer block, batch fields, barcode, icons, Pantones.</li>
+      <li>You get back a clean issue list, or "✅ All clear" if nothing's wrong.</li>
+    </ol>
+    <h2>What you'll need</h2>
+    <ul>
+      <li>Claude access (Pro, Team, or Max)</li>
+      <li>The artwork file as a PDF — this format gives the cleanest read. JPG/PNG will work in a pinch but accuracy drops, especially on small text and the MRP/USP ₹ symbol.</li>
+      <li>The skill installed in your Claude skills directory</li>
+    </ul>
+    <h2>Download</h2>
+    <a href="https://drive.google.com/file/d/1IkRRkAKV16RJ1fsPHHdCFFIL5w9Md3kN/view?usp=sharing" class="download-link" target="_blank" rel="noopener">+ artwork checker</a>
+  </div>
+  <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
+</div>
+
+</body>
+</html>
