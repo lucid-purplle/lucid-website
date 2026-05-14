@@ -241,3 +241,27 @@ a:hover { color: var(--red); }
   .home-card { width: 100%; }
   .home-our-goal { order: -1; max-width: 100%; padding-top: 0; }
 }
+
+/* Side-by-side image compare (used on NBP Whisperer) */
+.how-it-works__compare { display: flex; gap: 20px; margin: 0 0 28px; align-items: flex-start; }
+.how-it-works__compare .howit-screenshot { flex: 1 1 0; min-width: 0; margin: 0; }
+@media (max-width: 600px) {
+  .how-it-works__compare { flex-direction: column; align-items: stretch; gap: 28px; }
+  .how-it-works__compare .howit-screenshot { width: 100%; flex: 0 0 auto; }
+}
+
+/* BEFORE / AFTER label above the descriptive caption (compare block) */
+.howit-label {
+  display: block;
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.howit-caption-text {
+  /* inherits italic + 0.8rem + #777 from .how-it-works__caption on the figcaption */
+}
