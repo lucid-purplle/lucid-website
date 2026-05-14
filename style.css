@@ -211,3 +211,20 @@ a:hover { color: var(--red); }
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
 }
+
+/* ---------- "How it works" section (shared across workflow detail pages) ---------- */
+.how-it-works .howit-leadin { font-size: 0.95rem; color: #777777; margin-bottom: 24px; }
+.howit-screenshot { margin: 0 0 28px; }
+.howit-screenshot__trigger {
+  display: block; width: 100%; padding: 0; margin: 0;
+  border: 1px solid rgba(191, 191, 191, 0.4); border-radius: 8px;
+  background: transparent; cursor: zoom-in; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
+}
+.howit-screenshot__trigger:hover { box-shadow: 0 10px 32px rgba(133, 120, 189, 0.18); transform: translateY(-2px); }
+.howit-screenshot__trigger:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+.howit-screenshot__trigger img { display: block; width: 100%; height: auto; }
+.how-it-works__caption { margin-top: 10px; font-size: 0.8rem; font-style: italic; color: #777777; }
+.howit-errors li strong { font-weight: 600; color: #555; }

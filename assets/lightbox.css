@@ -1,0 +1,73 @@
+/* ============================================================
+   Lightbox — shared component.
+   Self-contained: discovers triggers by class on init, no
+   per-page configuration needed.
+   Markup contract: each page that uses the lightbox needs
+     <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="…">
+       <button class="lightbox__close" type="button" aria-label="Close">×</button>
+       <img class="lightbox__image" src="" alt="">
+     </div>
+   Triggers are any element with class .howit-screenshot__trigger
+   containing an <img> child.
+   z-index 10000 (film-grain is 9999).
+   ============================================================ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(17, 17, 17, 0.82);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.lightbox--open {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox__image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  min-width: 0; /* override flex's min-width: auto so max-width actually clamps */
+  min-height: 0;
+  border-radius: 6px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+.lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.lightbox__close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .lightbox { padding: 16px; }
+  .lightbox__close { top: 10px; right: 12px; }
+}
