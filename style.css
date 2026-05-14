@@ -228,3 +228,16 @@ a:hover { color: var(--red); }
 .howit-screenshot__trigger img { display: block; width: 100%; height: auto; }
 .how-it-works__caption { margin-top: 10px; font-size: 0.8rem; font-style: italic; color: #777777; }
 .howit-errors li strong { font-weight: 600; color: #555; }
+
+/* ---------- Homepage layout (index.html) ---------- */
+.home-wrapper { padding-left: 120px; padding-right: 120px; }
+.home-card-row { display: flex; justify-content: center; align-items: flex-start; gap: 48px; }
+.home-card { width: 180px; }
+.home-our-goal { max-width: 280px; padding-top: 16px; text-align: left; }
+
+@media (max-width: 600px) {
+  .home-wrapper { padding-left: 24px; padding-right: 24px; }
+  .home-card-row { flex-direction: column; align-items: stretch; gap: 32px; }
+  .home-card { width: 100%; }
+  .home-our-goal { order: -1; max-width: 100%; padding-top: 0; }
+}
