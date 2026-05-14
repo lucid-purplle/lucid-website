@@ -298,9 +298,36 @@ a:hover { color: var(--red); }
 
 /* ---------- Muse Models gallery (workflow-muse-models.html) ---------- */
 .muse-gallery { margin-top: 32px; }
-.muse-brand-section { margin-bottom: 48px; }
+.muse-brand-section { margin-bottom: 32px; }
 .muse-brand-section:last-child { margin-bottom: 0; }
-.muse-brand-section h2 { margin-bottom: 6px; }
+.muse-brand-header {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 16px 0; min-height: 44px;
+  border: 0; border-bottom: 1px solid rgba(191, 191, 191, 0.4);
+  background: transparent; cursor: pointer;
+  font-family: inherit; color: inherit;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+.muse-brand-header:hover { background: rgba(133, 120, 189, 0.04); }
+.muse-brand-header:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.muse-brand-header h2 { margin: 0; }
+.muse-brand-plus {
+  display: inline-block;
+  font-family: var(--font); font-weight: 500;
+  font-size: 1.4rem; line-height: 1;
+  color: var(--red);
+  margin-left: 16px;
+  transition: transform 0.3s ease;
+}
+.muse-brand-header[aria-expanded="true"] .muse-brand-plus { transform: rotate(45deg); }
+.muse-brand-body {
+  max-height: 5000px;
+  overflow: hidden;
+  padding-top: 24px;
+  transition: max-height 0.35s ease, padding-top 0.35s ease;
+}
+.muse-brand-body.is-collapsed { max-height: 0; padding-top: 0; }
 .muse-brand-leadin { font-size: 0.9rem; color: #777777; margin-bottom: 24px; }
 .muse-models-list { display: flex; flex-direction: column; gap: 32px; }
 .muse-model-card { /* container only; no chrome by default */ }

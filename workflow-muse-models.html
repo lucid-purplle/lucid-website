@@ -45,7 +45,11 @@
     </ul>
     <section class="muse-gallery">
       <section class="muse-brand-section">
-        <h2>NY Bae</h2>
+        <button class="muse-brand-header" type="button" aria-expanded="false" aria-controls="muse-brand-nyb">
+          <h2>NY Bae</h2>
+          <span class="muse-brand-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="muse-brand-body is-collapsed" id="muse-brand-nyb">
         <p class="muse-brand-leadin">Three approved model faces.</p>
         <div class="muse-models-list">
           <article class="muse-model-card">
@@ -73,10 +77,15 @@
             </div>
           </article>
         </div>
+        </div>
       </section>
 
       <section class="muse-brand-section">
-        <h2>DERMDOC</h2>
+        <button class="muse-brand-header" type="button" aria-expanded="false" aria-controls="muse-brand-dermdoc">
+          <h2>DERMDOC</h2>
+          <span class="muse-brand-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="muse-brand-body is-collapsed" id="muse-brand-dermdoc">
         <p class="muse-brand-leadin">Five approved models. Profile, closeups, and outfit reference per model.</p>
         <div class="muse-models-list">
           <article class="muse-model-card">
@@ -150,10 +159,15 @@
             </div>
           </article>
         </div>
+        </div>
       </section>
 
       <section class="muse-brand-section">
-        <h2>Alps Goodness</h2>
+        <button class="muse-brand-header" type="button" aria-expanded="false" aria-controls="muse-brand-alps-goodness">
+          <h2>Alps Goodness</h2>
+          <span class="muse-brand-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="muse-brand-body is-collapsed" id="muse-brand-alps-goodness">
         <p class="muse-brand-leadin">Five approved models. Profile, closeups, four outfit variations, and outfit details per model.</p>
         <div class="muse-models-list">
           <article class="muse-model-card">
@@ -287,6 +301,7 @@
             </div>
           </article>
         </div>
+        </div>
       </section>
     </section>
   </div>
@@ -300,6 +315,26 @@
 </div>
 
 <script src="assets/lightbox.js" defer></script>
+
+<script>
+  /* Muse Models brand-section dropdowns.
+     Multi-open accordion: tapping a brand header toggles that brand's body.
+     No sibling-close — opening one doesn't affect the others. */
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var headers = document.querySelectorAll('.muse-brand-header');
+      headers.forEach(function (header) {
+        header.addEventListener('click', function () {
+          var expanded = header.getAttribute('aria-expanded') === 'true';
+          header.setAttribute('aria-expanded', String(!expanded));
+          var bodyId = header.getAttribute('aria-controls');
+          var body = bodyId && document.getElementById(bodyId);
+          if (body) body.classList.toggle('is-collapsed');
+        });
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
