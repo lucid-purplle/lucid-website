@@ -29,29 +29,66 @@
     <p class="tagline">Ready-to-use AI workflows built by Lucid for teams across Purplle.</p>
   </div>
   <div class="workflow-grid">
-    <a href="workflow-nbp-whisperer.html" class="workflow-card">
-      <div class="wf-category">Skill</div>
-      <h3 class="wf-title">NBP Whisperer</h3>
-      <p class="wf-desc">A Claude skill that turns Claude into a dedicated prompt writer for Nano Banana Pro and Nano Banana 2 on Higgsfield. Give it a brief, get back a model recommendation and a ready-to-paste prompt.</p>
-    </a>
-    <a href="workflow-artwork-checker.html" class="workflow-card">
-      <div class="wf-category">Skill</div>
-      <h3 class="wf-title">Artwork Checker</h3>
-      <p class="wf-desc">A Claude skill built for the Hotline (same-day delivery) team that catches errors on packaging artwork before it goes to print. Upload a label, carton, or kit and it flags only the actual issues — FOP, BOP, compliance, copy quality, and manufacturer details.</p>
-    </a>
-    <a href="workflow-pdp-video-prompts.html" class="workflow-card">
-      <div class="wf-category">Prompt Library</div>
-      <h3 class="wf-title">PDP Video Prompts</h3>
-      <p class="wf-desc">A growing library of ready-to-use image and video prompts for producing PDP videos across brands. Each product has its own sheet with shot-by-shot prompts — hero shot, concern, texture, application, before/after, beauty shot, closing — written for Nano Banana Pro and Seedance 2.0.</p>
-    </a>
-    <a href="workflow-muse-models.html" class="workflow-card">
-      <div class="wf-category">Reference Library</div>
-      <h3 class="wf-title">Muse Models</h3>
-      <p class="wf-desc">A visual reference library of AI-generated model faces and outfits for use across Purplle's private label brands — Alps Goodness, Good Vibes, Dermdoc, and NY Bae. Pick a face, pick an outfit, and use the references as a starting point for any model shot you generate.</p>
-    </a>
+    <article class="workflow-card">
+      <a class="wf-card-link" href="workflow-nbp-whisperer.html">
+        <div class="wf-category">Skill</div>
+        <h3 class="wf-title">NBP Whisperer</h3>
+        <p class="wf-desc" id="wf-desc-nbp-whisperer">A Claude skill that turns Claude into a dedicated prompt writer for Nano Banana Pro and Nano Banana 2 on Higgsfield. Give it a brief, get back a model recommendation and a ready-to-paste prompt.</p>
+      </a>
+      <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-nbp-whisperer">read more <span class="wf-plus" aria-hidden="true">+</span></button>
+    </article>
+    <article class="workflow-card">
+      <a class="wf-card-link" href="workflow-artwork-checker.html">
+        <div class="wf-category">Skill</div>
+        <h3 class="wf-title">Artwork Checker</h3>
+        <p class="wf-desc" id="wf-desc-artwork-checker">A Claude skill built for the Hotline (same-day delivery) team that catches errors on packaging artwork before it goes to print. Upload a label, carton, or kit and it flags only the actual issues — FOP, BOP, compliance, copy quality, and manufacturer details.</p>
+      </a>
+      <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-artwork-checker">read more <span class="wf-plus" aria-hidden="true">+</span></button>
+    </article>
+    <article class="workflow-card">
+      <a class="wf-card-link" href="workflow-pdp-video-prompts.html">
+        <div class="wf-category">Prompt Library</div>
+        <h3 class="wf-title">PDP Video Prompts</h3>
+        <p class="wf-desc" id="wf-desc-pdp-video-prompts">A growing library of ready-to-use image and video prompts for producing PDP videos across brands. Each product has its own sheet with shot-by-shot prompts — hero shot, concern, texture, application, before/after, beauty shot, closing — written for Nano Banana Pro and Seedance 2.0.</p>
+      </a>
+      <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-pdp-video-prompts">read more <span class="wf-plus" aria-hidden="true">+</span></button>
+    </article>
+    <article class="workflow-card">
+      <a class="wf-card-link" href="workflow-muse-models.html">
+        <div class="wf-category">Reference Library</div>
+        <h3 class="wf-title">Muse Models</h3>
+        <p class="wf-desc" id="wf-desc-muse-models">A visual reference library of AI-generated model faces and outfits for use across Purplle's private label brands — Alps Goodness, Good Vibes, Dermdoc, and NY Bae. Pick a face, pick an outfit, and use the references as a starting point for any model shot you generate.</p>
+      </a>
+      <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-muse-models">read more <span class="wf-plus" aria-hidden="true">+</span></button>
+    </article>
   </div>
   <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
 </div>
+
+<script>
+  /* Workflow card description toggle.
+     Click the .wf-toggle button → expand/collapse the matching .wf-desc.
+     Card-level navigation is handled natively by the <a class="wf-card-link">
+     sibling, so this only needs to manage the toggle state and prevent
+     the toggle's click from bubbling to anywhere. */
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggles = document.querySelectorAll('.wf-toggle');
+      toggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var card = toggle.closest('.workflow-card');
+          if (!card) return;
+          var desc = card.querySelector('.wf-desc');
+          if (!desc) return;
+          var expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          desc.classList.toggle('is-open');
+        });
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
