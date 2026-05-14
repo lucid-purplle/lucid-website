@@ -242,12 +242,13 @@ a:hover { color: var(--red); }
   .home-our-goal { order: -1; max-width: 100%; padding-top: 0; }
 }
 
-/* Side-by-side image compare (used on NBP Whisperer) */
+/* Side-by-side image compare (used on NBP Whisperer) — stays flex row at all widths */
 .how-it-works__compare { display: flex; gap: 20px; margin: 0 0 28px; align-items: flex-start; }
 .how-it-works__compare .howit-screenshot { flex: 1 1 0; min-width: 0; margin: 0; }
+
+/* Mobile: tighten .workflow-detail-page card padding so it doesn't eat the viewport */
 @media (max-width: 600px) {
-  .how-it-works__compare { flex-direction: column; align-items: stretch; gap: 28px; }
-  .how-it-works__compare .howit-screenshot { width: 100%; flex: 0 0 auto; }
+  .workflow-detail-page { padding: 40px 24px; }
 }
 
 /* BEFORE / AFTER label above the descriptive caption (compare block) */
