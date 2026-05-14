@@ -261,12 +261,14 @@ a:hover { color: var(--red); }
 .home-card-row { display: flex; justify-content: center; align-items: flex-start; gap: 48px; }
 .home-card { width: 180px; }
 .home-our-goal { max-width: 280px; padding-top: 16px; text-align: left; }
+.home-tagline { font-size: 0.82rem; font-weight: 400; color: #777777; margin-top: 4px; letter-spacing: 0.03em; }
 
 @media (max-width: 600px) {
   .home-wrapper { padding-left: 24px; padding-right: 24px; }
   .home-card-row { flex-direction: column; align-items: stretch; gap: 32px; }
-  .home-card { width: 100%; }
+  .home-card { width: 100%; aspect-ratio: auto; height: 110px; }
   .home-our-goal { order: -1; max-width: 100%; padding-top: 0; }
+  .home-tagline { font-size: 0.72rem; margin-bottom: 40px; }
 }
 
 /* Side-by-side image compare (used on NBP Whisperer) — stays flex row at all widths */
