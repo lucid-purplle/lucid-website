@@ -381,13 +381,14 @@ a:hover { color: var(--red); }
 .gallery-list { display: flex; align-items: flex-start; gap: 16px; margin-top: 8px; }
 .gallery-col { display: flex; flex-direction: column; gap: 16px; flex: 1 1 0; min-width: 0; }
 
-/* Brand filter dropdown — sits between the sub-line and the grid */
-.gallery-filter { display: flex; align-items: center; gap: 10px; margin: 28px 0 4px; }
-.gallery-filter__label {
+/* Filter bar — shared restrained dropdown (gallery brand filter,
+   workflows New/Legacy filter). Sits between a page's intro and its grid. */
+.filter-bar { display: flex; align-items: center; gap: 10px; margin: 28px 0 4px; }
+.filter-bar__label {
   font-family: var(--font); font-size: 0.7rem; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--violet);
 }
-.gallery-filter__select {
+.filter-bar__select {
   font-family: var(--font); font-size: 0.82rem; font-weight: 500;
   color: var(--text);
   padding: 8px 34px 8px 14px;
@@ -402,8 +403,8 @@ a:hover { color: var(--red); }
   cursor: pointer;
   transition: border-color 0.2s ease;
 }
-.gallery-filter__select:hover { border-color: var(--violet); }
-.gallery-filter__select:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.filter-bar__select:hover { border-color: var(--violet); }
+.filter-bar__select:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
 
 .gallery-card {
   display: block; width: 100%; padding: 0; margin: 0;

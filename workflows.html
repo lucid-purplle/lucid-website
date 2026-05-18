@@ -28,8 +28,16 @@
     <h1>Workflows</h1>
     <p class="tagline">Ready-to-use AI workflows built by Lucid for teams across Purplle.</p>
   </div>
+  <div class="filter-bar">
+    <label class="filter-bar__label" for="workflow-status-filter">Show</label>
+    <select class="filter-bar__select" id="workflow-status-filter">
+      <option value="all">All</option>
+      <option value="new">New</option>
+      <option value="legacy">Legacy</option>
+    </select>
+  </div>
   <div class="workflow-grid">
-    <article class="workflow-card">
+    <article class="workflow-card" data-status="new">
       <a class="wf-card-link" href="workflow-nbp-whisperer.html">
         <div class="wf-category">Skill</div>
         <h3 class="wf-title">NBP Whisperer</h3>
@@ -37,7 +45,7 @@
       </a>
       <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-nbp-whisperer">read more <span class="wf-plus" aria-hidden="true">+</span></button>
     </article>
-    <article class="workflow-card">
+    <article class="workflow-card" data-status="new">
       <a class="wf-card-link" href="workflow-artwork-checker.html">
         <div class="wf-category">Skill</div>
         <h3 class="wf-title">Artwork Checker</h3>
@@ -45,7 +53,7 @@
       </a>
       <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-artwork-checker">read more <span class="wf-plus" aria-hidden="true">+</span></button>
     </article>
-    <article class="workflow-card">
+    <article class="workflow-card" data-status="new">
       <a class="wf-card-link" href="workflow-pdp-video-prompts.html">
         <div class="wf-category">Prompt Library</div>
         <h3 class="wf-title">PDP Video Prompts</h3>
@@ -53,7 +61,7 @@
       </a>
       <button class="wf-toggle" type="button" aria-expanded="false" aria-controls="wf-desc-pdp-video-prompts">read more <span class="wf-plus" aria-hidden="true">+</span></button>
     </article>
-    <article class="workflow-card">
+    <article class="workflow-card" data-status="new">
       <a class="wf-card-link" href="workflow-muse-models.html">
         <div class="wf-category">Reference Library</div>
         <h3 class="wf-title">Muse Models</h3>
@@ -101,6 +109,23 @@
           }
           toggle.setAttribute('aria-expanded', String(!expanded));
           desc.classList.toggle('is-open');
+        });
+      });
+    });
+  })();
+
+  /* New/Legacy filter — show/hide .workflow-card by data-status.
+     The CSS grid reflows automatically; the accordion is untouched. */
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var select = document.getElementById('workflow-status-filter');
+      if (!select) return;
+      var cards = document.querySelectorAll('.workflow-card');
+      select.addEventListener('change', function () {
+        var v = select.value;
+        cards.forEach(function (card) {
+          var match = v === 'all' || card.getAttribute('data-status') === v;
+          card.style.display = match ? '' : 'none';
         });
       });
     });
