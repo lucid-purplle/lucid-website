@@ -37,16 +37,16 @@
       <li>Fast iteration when timelines do not allow traditional concepting cycles</li>
     </ul>
     <p class="wf-note"><strong>What this is not:</strong> a final artwork creation process, a moodboarding exercise, or a subjective visual exploration.</p>
-    <p class="wf-note"><strong>How to use:</strong> Work through the 7 steps below in order. Each step has a prompt to copy into your GPT chat, and a note on what to do before you paste it (uploading MMs, competitor packs, references, and so on). Run them as a sequence in one continuous chat, since each step builds on the last.</p>
+    <p class="wf-note"><strong>How to use:</strong> Work through the 7 steps below in order. Each step has a prompt to copy into your LLM chat, and a note on what to do before you paste it (uploading MMs, competitor packs, references, and so on). Run them as a sequence in one continuous chat, since each step builds on the last.</p>
 
     <div class="accordion">
 
       <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-01">
-        <span class="accordion__label"><span class="accordion__step">Step 01 — Constraint Declaration</span><span class="accordion__summary"> · Give the GPT all the context about your product</span></span>
+        <span class="accordion__label"><span class="accordion__step">Step 01 — Constraint Declaration</span><span class="accordion__summary"> · Give the LLM all the context about your product</span></span>
         <span class="accordion__plus" aria-hidden="true">+</span>
       </button>
       <div class="accordion__body is-collapsed copy-block" id="rtd-step-01">
-        <p class="accordion__note">The first prompt you copy into a GPT. It gives the GPT all the context it needs about the product you're working on. Fill in the blanks and multiple-choice options before you paste.</p>
+        <p class="accordion__note">The first prompt you copy into an LLM. It gives the LLM all the context it needs about the product you're working on. Fill in the blanks and multiple-choice options before you paste.</p>
         <pre class="prompt-pre js-copy-text">You are acting as a brand systems designer.
 
 Context:
@@ -78,7 +78,7 @@ Do not suggest any design yet.</pre>
         <span class="accordion__plus" aria-hidden="true">+</span>
       </button>
       <div class="accordion__body is-collapsed copy-block" id="rtd-step-02">
-        <p class="accordion__note">Upload the MM if you have it. If you don't, give whatever product info you have and note it may change once the MM is ready. Also upload competitor product pack images here. The GPT analyses what competitors do on their packs in the context of your product and category.</p>
+        <p class="accordion__note">Upload the MM if you have it. If you don't, give whatever product info you have and note it may change once the MM is ready. Also upload competitor product pack images here. The LLM analyses what competitors do on their packs in the context of your product and category.</p>
         <pre class="prompt-pre js-copy-text">You are acting as a packaging category analyst.
 
 Product type: [e.g. glow sunscreen, barrier serum]
@@ -105,7 +105,7 @@ Do not suggest design directions yet.</pre>
         <span class="accordion__plus" aria-hidden="true">+</span>
       </button>
       <div class="accordion__body is-collapsed copy-block" id="rtd-step-03">
-        <p class="accordion__note">After the previous step you'll have a lot of information about competitor products and category best practices. This prompt helps the GPT pick up only the repeatable visual elements across all the competitor packs.</p>
+        <p class="accordion__note">After the previous step you'll have a lot of information about competitor products and category best practices. This prompt helps the LLM pick up only the repeatable visual elements across all the competitor packs.</p>
         <pre class="prompt-pre js-copy-text">You are acting as a design systems analyst.
 
 Based on the analysed competitor packs, extract repeatable visual levers.
@@ -150,7 +150,7 @@ I will search using these terms and upload selected references next.</pre>
         <span class="accordion__plus" aria-hidden="true">+</span>
       </button>
       <div class="accordion__body is-collapsed copy-block" id="rtd-step-05">
-        <p class="accordion__note">The GPT analyses the Pinterest references you uploaded and suggests 3 distinct design systems. Once it describes them, respond with what you know about the brand's design style, any fixed design choices, and any set method to follow, such as the hierarchy of text and information on the front of pack.</p>
+        <p class="accordion__note">The LLM analyses the Pinterest references you uploaded and suggests 3 distinct design systems. Once it describes them, respond with what you know about the brand's design style, any fixed design choices, and any set method to follow, such as the hierarchy of text and information on the front of pack.</p>
         <pre class="prompt-pre js-copy-text">You are acting as a packaging systems designer.
 
 Using:
@@ -178,7 +178,7 @@ Do not generate visuals yet.</pre>
         <span class="accordion__plus" aria-hidden="true">+</span>
       </button>
       <div class="accordion__body is-collapsed copy-block" id="rtd-step-06">
-        <p class="accordion__note">The GPT converts the 3 aligned design systems into 3 clear Nano Banana Pro prompts that produce a product mockup. Upload the brand's logo as a reference image, and tell the GPT you'll be using it as a reference image so it refers to it as such in the final prompt.</p>
+        <p class="accordion__note">The LLM converts the 3 aligned design systems into 3 clear Nano Banana Pro prompts that produce a product mockup. Upload the brand's logo as a reference image, and tell the LLM you'll be using it as a reference image so it refers to it as such in the final prompt.</p>
         <pre class="prompt-pre js-copy-text">You are acting as an expert Nano Banana Pro prompter in reference to beauty product design creation.
 
 Using the already-selected design system:
@@ -194,7 +194,7 @@ Rules:
 
 Your goal is to accurately verbalise exactly what visuals the product pack needs to have, in the form of a Nano Banana Pro prompt.</pre>
         <button class="gallery-copy" type="button">Copy</button>
-        <p class="accordion__note accordion__note--trailing">Note: you can upload the results you get from NBP to refine them. Ask the GPT to write the changes you want as an NBP prompt, using the image of the generation you want to edit as the reference image.</p>
+        <p class="accordion__note accordion__note--trailing">Note: you can upload the results you get from NBP to refine them. Ask the LLM to write the changes you want as an NBP prompt, using the image of the generation you want to edit as the reference image.</p>
       </div>
 
       <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-07">
@@ -202,7 +202,7 @@ Your goal is to accurately verbalise exactly what visuals the product pack needs
         <span class="accordion__plus" aria-hidden="true">+</span>
       </button>
       <div class="accordion__body is-collapsed copy-block" id="rtd-step-07">
-        <p class="accordion__note">This step comes up after you've shared your preferred option, if there are design changes from the BM or technical changes in the product. Upload the last final product image that the changes apply to, and ask the GPT to use it as the reference for your corrective NBP prompt.</p>
+        <p class="accordion__note">This step comes up after you've shared your preferred option, if there are design changes from the BM or technical changes in the product. Upload the last final product image that the changes apply to, and ask the LLM to use it as the reference for your corrective NBP prompt.</p>
         <pre class="prompt-pre js-copy-text">You are acting as a packaging problem-solver.
 
 New stakeholder / regulatory inputs:
@@ -229,7 +229,7 @@ Do not add new visual languages.</pre>
 
     <h2>What you'll need</h2>
     <ul>
-      <li>An active LLM subscription (the workflow is written for GPT)</li>
+      <li>An active LLM subscription (Claude, ChatGPT, or Gemini)</li>
       <li>Higgsfield access for Nano Banana Pro (Steps 06–07)</li>
       <li>Your product MM, competitor pack images, and the brand logo</li>
       <li>A Pinterest account or similar, for the Step 04 reference search</li>
