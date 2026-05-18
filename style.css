@@ -549,6 +549,33 @@ a:hover { color: var(--red); }
 .accordion__body .gallery-copy { margin-top: 14px; }
 .accordion__note--trailing { margin: 16px 0 0; }
 
+/* Card-style accordion — opt-in modifier for workflow step pages
+   (workflow-ugc-video-creator, workflow-reference-to-design). Additive
+   only: base .accordion / .accordion__* rules and accordion.js are not
+   touched, so the FAQs accordion and any other user is unaffected.
+   The header + body read as one card via [aria-expanded] and
+   :not(.is-collapsed) — no per-step wrapper needed. */
+.accordion--card > .accordion__header {
+  padding: 16px 20px;
+  margin-top: 12px;
+  border: 1px solid rgba(191, 191, 191, 0.5);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+}
+.accordion--card > .accordion__header:hover { background: rgba(255, 255, 255, 0.85); }
+.accordion--card > .accordion__header[aria-expanded="true"] {
+  border-bottom-color: transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.accordion--card > .accordion__body:not(.is-collapsed) {
+  padding: 6px 20px 20px;
+  border: 1px solid rgba(191, 191, 191, 0.5);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
 /* Prompt block — preformatted; line breaks preserved on screen and on copy */
 .prompt-pre {
   white-space: pre-wrap;
