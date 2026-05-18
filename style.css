@@ -283,6 +283,22 @@ a:hover { color: var(--red); }
   .workflow-detail-page { padding: 40px 24px; }
 }
 
+/* ---------- Open workflow-landing shell (body.workflows-open) ---------- */
+/* A third page shell, alongside the narrow card and the gallery card.
+   Used only by the two multi-step workflow landing pages so the 3-up
+   step grid gets a wider, card-free canvas on the page background. */
+body.workflows-open .workflow-detail-page {
+  max-width: 1150px; padding: 0;
+  background: transparent; border-radius: 0;
+  box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+  isolation: auto;
+}
+body.workflows-open .workflow-detail-page::before { display: none; }
+body.workflows-open .back-link { max-width: 1150px; }
+body.workflows-open .wf-lead,
+body.workflows-open .wf-note,
+body.workflows-open .workflow-detail-page ul { max-width: 720px; }
+
 /* BEFORE / AFTER label above the descriptive caption (compare block) */
 .howit-label {
   display: block;
@@ -609,8 +625,19 @@ a:hover { color: var(--red); }
 }
 .ugc-model__label { font-family: var(--font); font-size: 0.78rem; font-weight: 500; color: #222; }
 .ugc-model__bar .accordion__plus { font-size: 1.1rem; }
-.ugc-model__desc { padding-top: 10px; }
-.ugc-model__desc p { font-size: 0.82rem; line-height: 1.65; color: #777777; margin: 0; }
+/* Descriptions live in their own block (.ugc-model-descs) so an expanded
+   one spans the full content width. Styled like the .prompt-pre block;
+   long descriptions cap height and scroll internally. */
+.ugc-model-descs { margin-top: 4px; }
+.ugc-model__desc { padding-top: 0; }
+.ugc-model__desc:not(.is-collapsed) {
+  max-height: 280px; overflow-y: auto;
+  margin-top: 12px; padding: 14px 16px;
+  background: rgba(133, 120, 189, 0.06);
+  border-left: 2px solid rgba(133, 120, 189, 0.45);
+  border-radius: 0 6px 6px 0;
+}
+.ugc-model__desc p { font-size: 0.85rem; line-height: 1.7; color: #555; margin: 0; }
 
 @media (max-width: 600px) {
   .ugc-model { flex-basis: calc((100% - 12px) / 2); }

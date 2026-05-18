@@ -26,52 +26,57 @@ WORKFLOWS = {
     },
 }
 
-# Verbatim model-look grid carried over from the UGC Step 06 accordion.
+# Model-look grid for UGC Step 06. Thumbnails (.ugc-models) and the
+# click-to-reveal descriptions (.ugc-model-descs) are separate blocks so
+# an expanded description spans the full content width, not the thumbnail
+# column. accordion.js links trigger -> description by aria-controls/id.
 MODEL_GRID = """<div class="ugc-models">
   <div class="ugc-model">
     <button class="accordion__header ugc-model__trigger" type="button" aria-expanded="false" aria-controls="ugc-model-yellow">
       <img src="assets/workflow-ugc-models/model-yellow-curtains.jpg?v=2" alt="Model look — Yellow curtains" width="1200" height="1200" loading="lazy">
       <span class="ugc-model__bar"><span class="ugc-model__label">Yellow curtains</span><span class="accordion__plus" aria-hidden="true">+</span></span>
     </button>
-    <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-yellow">
-      <p>Setting: side of an open window with morning sunlight entering from the left; light pale yellow linen curtains with teal woven motifs; white wall; three framed graphic prints in beige, light yellow, and muted teal. Props: monstera plant slightly behind the model on the right; wooden study desk; two physics textbooks stacked on the desk, covers in white and beige; ceramic off-white coffee mug. Model: Indian woman, mid-20s, medium Indian skin tone, average body type, shoulder-length natural wavy hair worn open, no base makeup, visible skin texture, lip balm only. Outfit: fuchsia pink cotton kurti with matching fabric buttons, oxidised silver jhumkas, no bangles, no necklace.</p>
-    </div>
   </div>
   <div class="ugc-model">
     <button class="accordion__header ugc-model__trigger" type="button" aria-expanded="false" aria-controls="ugc-model-grey">
       <img src="assets/workflow-ugc-models/model-grey-bathroom.jpg?v=2" alt="Model look — Grey bathroom" width="1200" height="1200" loading="lazy">
       <span class="ugc-model__bar"><span class="ugc-model__label">Grey bathroom</span><span class="accordion__plus" aria-hidden="true">+</span></span>
     </button>
-    <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-grey">
-      <p>Setting: flat grey painted wall in a modern apartment; soft daylight from a window in front of the model; matte finish wall, no texture or pattern; round mirror with a thin black metal frame partially visible on the right. Props: light grey marble vanity counter at the bottom of the frame; minimal floating shelf on the grey wall; white ceramic planter with an upright snake plant; two frosted glass skincare bottles beside the planter. Model: Indian woman, mid-20s, light-medium Indian skin tone, slim to average body type, sleek straight hair tied in a low ponytail, no base makeup, visible skin texture, natural lips. Outfit: off-white ribbed tank top, small gold hoop earrings, no necklace, no bangles.</p>
-    </div>
   </div>
   <div class="ugc-model">
     <button class="accordion__header ugc-model__trigger" type="button" aria-expanded="false" aria-controls="ugc-model-white">
       <img src="assets/workflow-ugc-models/model-white-bedroom.jpg?v=2" alt="Model look — White bedroom" width="1200" height="1200" loading="lazy">
       <span class="ugc-model__bar"><span class="ugc-model__label">White bedroom</span><span class="accordion__plus" aria-hidden="true">+</span></span>
     </button>
-    <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-white">
-      <p>Setting: side of a large bedroom window with soft morning sunlight from the left; sheer white cotton curtains partially drawn, diffusing light into the room; clean white wall with no artwork; soft sunlight creating gentle shadow patterns. Props: bed beside the window; white cotton bedsheet neatly spread; light wooden side table next to the bed; ceramic off-white vase with eucalyptus stems; closed beige notebook flat on the bed near the model. Model: Indian woman, late-20s, light-medium Indian skin tone, average body type, open hair with natural air-dried texture, no base makeup, visible skin texture, skincare-fresh face. Outfit: pastel blue cotton top, tiny silver stud earrings, no necklace, no bangles.</p>
-    </div>
   </div>
   <div class="ugc-model">
     <button class="accordion__header ugc-model__trigger" type="button" aria-expanded="false" aria-controls="ugc-model-cream">
       <img src="assets/workflow-ugc-models/model-cream-gallery.jpg?v=2" alt="Model look — Cream gallery wall" width="1200" height="1200" loading="lazy">
       <span class="ugc-model__bar"><span class="ugc-model__label">Cream gallery wall</span><span class="accordion__plus" aria-hidden="true">+</span></span>
     </button>
-    <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-cream">
-      <p>Setting: warm cream painted walls; soft afternoon sunlight from the right; salon-style gallery wall behind the model with multiple framed graphic prints in deep teal, mustard yellow, terracotta, dusty pink, and beige; frames in dark wood and matte black. Props: dark teak wooden bed behind the model; patterned cotton bedsheet in maroon, indigo, and beige motifs; layered cushions in solid mustard, deep teal, and off-white; carved wooden bedside table; brass table lamp with a warm beige fabric lampshade; small stack of earthy-toned books; ceramic incense holder; tall areca palm plant behind the model on the left. Model: Indian woman, late-20s, medium-deep Indian skin tone, curvy body type, hair tied in a low bun with loose face-framing strands, no base makeup, visible skin texture, lip balm only. Outfit: solid emerald green cotton kurti with subtle woven texture, oxidised silver jhumka earrings, small maroon bindi, no bangles, no necklace.</p>
-    </div>
   </div>
   <div class="ugc-model">
     <button class="accordion__header ugc-model__trigger" type="button" aria-expanded="false" aria-controls="ugc-model-matte">
       <img src="assets/workflow-ugc-models/model-matte-white.jpg?v=2" alt="Model look — Matte white room" width="1200" height="1200" loading="lazy">
       <span class="ugc-model__bar"><span class="ugc-model__label">Matte white room</span><span class="accordion__plus" aria-hidden="true">+</span></span>
     </button>
-    <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-matte">
-      <p>Setting: clean matte white room with white walls and ceiling; soft natural daylight from a window in front of the model; even, shadow-free lighting; subtle colour accents in cobalt blue and pale yellow. Wall: three framed graphic art prints on the white wall, simple geometric shapes and line illustrations, cobalt blue / pale yellow / beige palette, thin white frames, modern minimal calm style. Props: small white wall shelf; two stacked books, one solid pale yellow cover and one solid cobalt blue; white ceramic planter with a small round-leaved plant; cobalt blue ceramic tray with cotton pads arranged neatly; clear glass water bottle beside the tray; no foreground surface. Model: Indian woman, late-20s, medium to light-medium Indian skin tone, average body type, shoulder-length natural air-dried hair worn open, no base makeup, visible real skin texture, skincare-fresh finish. Outfit: pale yellow ribbed top, small gold stud earrings, no necklace, no bangles, no rings.</p>
-    </div>
+  </div>
+</div>
+<div class="ugc-model-descs">
+  <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-yellow">
+    <p>Setting: side of an open window with morning sunlight entering from the left; light pale yellow linen curtains with teal woven motifs; white wall; three framed graphic prints in beige, light yellow, and muted teal. Props: monstera plant slightly behind the model on the right; wooden study desk; two physics textbooks stacked on the desk, covers in white and beige; ceramic off-white coffee mug. Model: Indian woman, mid-20s, medium Indian skin tone, average body type, shoulder-length natural wavy hair worn open, no base makeup, visible skin texture, lip balm only. Outfit: fuchsia pink cotton kurti with matching fabric buttons, oxidised silver jhumkas, no bangles, no necklace.</p>
+  </div>
+  <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-grey">
+    <p>Setting: flat grey painted wall in a modern apartment; soft daylight from a window in front of the model; matte finish wall, no texture or pattern; round mirror with a thin black metal frame partially visible on the right. Props: light grey marble vanity counter at the bottom of the frame; minimal floating shelf on the grey wall; white ceramic planter with an upright snake plant; two frosted glass skincare bottles beside the planter. Model: Indian woman, mid-20s, light-medium Indian skin tone, slim to average body type, sleek straight hair tied in a low ponytail, no base makeup, visible skin texture, natural lips. Outfit: off-white ribbed tank top, small gold hoop earrings, no necklace, no bangles.</p>
+  </div>
+  <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-white">
+    <p>Setting: side of a large bedroom window with soft morning sunlight from the left; sheer white cotton curtains partially drawn, diffusing light into the room; clean white wall with no artwork; soft sunlight creating gentle shadow patterns. Props: bed beside the window; white cotton bedsheet neatly spread; light wooden side table next to the bed; ceramic off-white vase with eucalyptus stems; closed beige notebook flat on the bed near the model. Model: Indian woman, late-20s, light-medium Indian skin tone, average body type, open hair with natural air-dried texture, no base makeup, visible skin texture, skincare-fresh face. Outfit: pastel blue cotton top, tiny silver stud earrings, no necklace, no bangles.</p>
+  </div>
+  <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-cream">
+    <p>Setting: warm cream painted walls; soft afternoon sunlight from the right; salon-style gallery wall behind the model with multiple framed graphic prints in deep teal, mustard yellow, terracotta, dusty pink, and beige; frames in dark wood and matte black. Props: dark teak wooden bed behind the model; patterned cotton bedsheet in maroon, indigo, and beige motifs; layered cushions in solid mustard, deep teal, and off-white; carved wooden bedside table; brass table lamp with a warm beige fabric lampshade; small stack of earthy-toned books; ceramic incense holder; tall areca palm plant behind the model on the left. Model: Indian woman, late-20s, medium-deep Indian skin tone, curvy body type, hair tied in a low bun with loose face-framing strands, no base makeup, visible skin texture, lip balm only. Outfit: solid emerald green cotton kurti with subtle woven texture, oxidised silver jhumka earrings, small maroon bindi, no bangles, no necklace.</p>
+  </div>
+  <div class="accordion__body is-collapsed ugc-model__desc" id="ugc-model-matte">
+    <p>Setting: clean matte white room with white walls and ceiling; soft natural daylight from a window in front of the model; even, shadow-free lighting; subtle colour accents in cobalt blue and pale yellow. Wall: three framed graphic art prints on the white wall, simple geometric shapes and line illustrations, cobalt blue / pale yellow / beige palette, thin white frames, modern minimal calm style. Props: small white wall shelf; two stacked books, one solid pale yellow cover and one solid cobalt blue; white ceramic planter with a small round-leaved plant; cobalt blue ceramic tray with cotton pads arranged neatly; clear glass water bottle beside the tray; no foreground surface. Model: Indian woman, late-20s, medium to light-medium Indian skin tone, average body type, shoulder-length natural air-dried hair worn open, no base makeup, visible real skin texture, skincare-fresh finish. Outfit: pale yellow ribbed top, small gold stud earrings, no necklace, no bangles, no rings.</p>
   </div>
 </div>"""
 
