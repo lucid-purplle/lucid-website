@@ -380,6 +380,31 @@ a:hover { color: var(--red); }
    Columns are equal-width flex children; thumbnails keep natural aspect. */
 .gallery-list { display: flex; align-items: flex-start; gap: 16px; margin-top: 8px; }
 .gallery-col { display: flex; flex-direction: column; gap: 16px; flex: 1 1 0; min-width: 0; }
+
+/* Brand filter dropdown — sits between the sub-line and the grid */
+.gallery-filter { display: flex; align-items: center; gap: 10px; margin: 28px 0 4px; }
+.gallery-filter__label {
+  font-family: var(--font); font-size: 0.7rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--violet);
+}
+.gallery-filter__select {
+  font-family: var(--font); font-size: 0.82rem; font-weight: 500;
+  color: var(--text);
+  padding: 8px 34px 8px 14px;
+  border: 1px solid rgba(191, 191, 191, 0.55);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' fill='none' stroke='%238578BD' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  background-size: 11px;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.gallery-filter__select:hover { border-color: var(--violet); }
+.gallery-filter__select:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+
 .gallery-card {
   display: block; width: 100%; padding: 0; margin: 0;
   border: 1px solid rgba(191, 191, 191, 0.4); border-radius: 8px;

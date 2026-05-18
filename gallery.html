@@ -30,9 +30,22 @@
     <h1>Generations Spotlight</h1>
     <p class="wf-lead">Open to see the prompt &amp; reference images.</p>
 
+    <div class="gallery-filter">
+      <label class="gallery-filter__label" for="gallery-brand-filter">Brand</label>
+      <select class="gallery-filter__select" id="gallery-brand-filter">
+        <option value="all">All</option>
+        <option value="ag">Alps Goodness</option>
+        <option value="gv">Good Vibes</option>
+        <option value="dd">Dermdoc</option>
+        <option value="nyb">NY Bae</option>
+        <option value="salm">SALM</option>
+        <option value="film">Film</option>
+      </select>
+    </div>
+
     <div class="gallery-list">
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="dd">
         <button class="gallery-card" type="button" aria-label="Open detail — Dermdoc Purple Sunscreen">
           <img src="assets/Gallery/dd_purple-sunscreen_nbp_01/main-thumb.jpg" alt="Dermdoc Purple Sunscreen — AI-generated product image" width="1000" height="424" loading="lazy">
         </button>
@@ -60,7 +73,7 @@
         </template>
       </article>
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="nyb">
         <button class="gallery-card" type="button" aria-label="Open detail — NY Bae Velvet Mousse Lipstick">
           <img src="assets/Gallery/nyb_velvet-mousse-lipstick_nbp_02/main-thumb.jpg" alt="NY Bae Velvet Mousse Lipstick — AI-generated product image" width="1000" height="1000" loading="lazy">
         </button>
@@ -92,7 +105,7 @@
         </template>
       </article>
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="ag">
         <button class="gallery-card" type="button" aria-label="Open detail — Alps Goodness Henna Powder">
           <img src="assets/Gallery/ag_henna-powder_nbp_03/main-thumb.jpg" alt="Alps Goodness Henna Powder — AI-generated product image" width="1000" height="1000" loading="lazy">
         </button>
@@ -118,7 +131,7 @@
         </template>
       </article>
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="gv">
         <button class="gallery-card" type="button" aria-label="Open detail — Good Vibes Cica Sunscreen">
           <img src="assets/Gallery/gv_cica-sunscreen_nbp_04/main-thumb.jpg" alt="Good Vibes Cica Sunscreen — AI-generated product image" width="1000" height="424" loading="lazy">
         </button>
@@ -148,7 +161,7 @@
         </template>
       </article>
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="salm">
         <button class="gallery-card" type="button" aria-label="Open detail — SALM Moisturiser">
           <img src="assets/Gallery/salm_moisturiser_nb_05/main-thumb.jpg" alt="SALM Moisturiser — AI-generated product image" width="1000" height="1000" loading="lazy">
         </button>
@@ -174,7 +187,7 @@
         </template>
       </article>
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="nyb">
         <button class="gallery-card" type="button" aria-label="Open detail — NY Bae Cranberry Tinted Lip Balm">
           <img src="assets/Gallery/nyb_cranberry-tinted-lip-balm_nbp_06/main-thumb.jpg" alt="NY Bae Cranberry Tinted Lip Balm — AI-generated product image" width="1000" height="1000" loading="lazy">
         </button>
@@ -200,7 +213,7 @@
         </template>
       </article>
 
-      <article class="gallery-entry">
+      <article class="gallery-entry" data-brand="ag">
         <button class="gallery-card" type="button" aria-label="Open detail — Alps Goodness Beetroot Powder">
           <img src="assets/Gallery/ag_beetroot-powder_nbp_07/main-thumb.jpg" alt="Alps Goodness Beetroot Powder — AI-generated product image" width="1000" height="1000" loading="lazy">
         </button>
@@ -222,6 +235,113 @@
             <div class="gallery-detail__tags">
               <span class="gallery-tag">Alps Goodness</span>
               <span class="gallery-tag">Beetroot Powder</span>
+              <span class="gallery-tag gallery-tag--model">Nano Banana Pro</span>
+            </div>
+          </div>
+        </template>
+      </article>
+
+      <article class="gallery-entry" data-brand="dd">
+        <button class="gallery-card" type="button" aria-label="Open detail — Dermdoc Hydrolyzed Collagen Face Gel">
+          <img src="assets/Gallery/dd_hydrolyzed-collagen-face-gel_nbp_08/main-thumb.jpg" alt="Dermdoc Hydrolyzed Collagen Face Gel — AI-generated product image" width="1000" height="1000" loading="lazy">
+        </button>
+        <template class="gallery-detail-tmpl">
+          <div class="gallery-detail">
+            <img class="gallery-detail__main" src="assets/Gallery/dd_hydrolyzed-collagen-face-gel_nbp_08/main.jpg" alt="Dermdoc Hydrolyzed Collagen Face Gel — AI-generated product image">
+            <div class="gallery-detail__refs">
+              <img src="assets/Gallery/dd_hydrolyzed-collagen-face-gel_nbp_08/ref-01.jpg" alt="Dermdoc Hydrolyzed Collagen Face Gel — reference image 1">
+            </div>
+            <div class="gallery-detail__prompt-head">
+              <h3>Prompt</h3>
+              <button class="gallery-copy" type="button">Copy</button>
+            </div>
+            <div class="gallery-prompt">
+              <p>texture of clear transparent gel spread in smooth wavy ridges across the full frame, Polynesian Blue (#0F53A0) background, glossy highlights with subtle refraction, tiny scattered micro-bubbles and droplets, clean minimal studio lighting, shallow depth of field, high-res, no text, no product, no hands.</p>
+            </div>
+            <div class="gallery-detail__tags">
+              <span class="gallery-tag">Dermdoc</span>
+              <span class="gallery-tag">Hydrolyzed Collagen Face Gel</span>
+              <span class="gallery-tag gallery-tag--model">Nano Banana Pro</span>
+            </div>
+          </div>
+        </template>
+      </article>
+
+      <article class="gallery-entry" data-brand="dd">
+        <button class="gallery-card" type="button" aria-label="Open detail — Dermdoc Kojic Acid Serum">
+          <img src="assets/Gallery/dd_kojic-acid-serum_nbp_09/main-thumb.jpg" alt="Dermdoc Kojic Acid Serum — AI-generated product image" width="1000" height="1000" loading="lazy">
+        </button>
+        <template class="gallery-detail-tmpl">
+          <div class="gallery-detail">
+            <img class="gallery-detail__main" src="assets/Gallery/dd_kojic-acid-serum_nbp_09/main.jpg" alt="Dermdoc Kojic Acid Serum — AI-generated product image">
+            <div class="gallery-detail__refs">
+              <img src="assets/Gallery/dd_kojic-acid-serum_nbp_09/ref-01.jpg" alt="Dermdoc Kojic Acid Serum — reference image 1">
+              <img src="assets/Gallery/dd_kojic-acid-serum_nbp_09/ref-02.jpg" alt="Dermdoc Kojic Acid Serum — reference image 2">
+            </div>
+            <div class="gallery-detail__prompt-head">
+              <h3>Prompt</h3>
+              <button class="gallery-copy" type="button">Copy</button>
+            </div>
+            <div class="gallery-prompt">
+              <p>Luxury skincare flat lay featuring a cobalt blue glass bottle &lt;&lt;&lt;image_1&gt;&gt;&gt;(Dermdoc 2% Kojic Acid Serum) with a white pump, placed centrally in a top-down composition. Background is solid Polynesian Blue (#0F53A0), smooth matte finish. Surround the bottle with glossy, translucent liquid shapes and serum-like swirls, flowing from right side of the image along with a few soft, half of the frame covered with the serum, rounded droplets placed aesthetically around it.</p>
+              <p>Lighting is soft and diffused from above, creating gentle shadows directly beneath elements and subtle highlights on the glass. The liquid elements have slight transparency, refraction, and a clean, premium glow. Composition &lt;&lt;&lt;image_2&gt;&gt;&gt; is minimal, balanced, and modern with ample negative space, high-end beauty campaign style, ultra-clean and high resolution.</p>
+            </div>
+            <div class="gallery-detail__tags">
+              <span class="gallery-tag">Dermdoc</span>
+              <span class="gallery-tag">Kojic Acid Serum</span>
+              <span class="gallery-tag gallery-tag--model">Nano Banana Pro</span>
+            </div>
+          </div>
+        </template>
+      </article>
+
+      <article class="gallery-entry" data-brand="film">
+        <button class="gallery-card" type="button" aria-label="Open detail — Film NARS Remake">
+          <img src="assets/Gallery/film_NARS-remake_nbp_10/main-thumb.jpg" alt="Film NARS Remake — AI-generated image" width="1000" height="558" loading="lazy">
+        </button>
+        <template class="gallery-detail-tmpl">
+          <div class="gallery-detail">
+            <img class="gallery-detail__main" src="assets/Gallery/film_NARS-remake_nbp_10/main.jpg" alt="Film NARS Remake — AI-generated image">
+            <div class="gallery-detail__refs">
+              <img src="assets/Gallery/film_NARS-remake_nbp_10/ref-01.jpg" alt="Film NARS Remake — reference image 1">
+            </div>
+            <div class="gallery-detail__prompt-head">
+              <h3>Prompt</h3>
+              <button class="gallery-copy" type="button">Copy</button>
+            </div>
+            <div class="gallery-prompt">
+              <p>Recreate the image,Cinematic medium shot of a fashion model’s smashing/crushing lipstick bullet tip under dual-tone neon magenta and red lighting, bad Tv effect. High-contrast dramatic lighting with glossy skin highlights. Heavy LCD screen glitch overlay with visible pixel grid, vertical scanlines, RGB channel misalignment, chromatic aberration, digital signal distortion, subtle frame tearing, and LED display texture. Soft bloom around highlights, cyberpunk cosmetic advertisement style, shallow depth of field, ultra-detailed, futuristic high-fashion aesthetic.</p>
+            </div>
+            <div class="gallery-detail__tags">
+              <span class="gallery-tag">Film</span>
+              <span class="gallery-tag">NARS Remake</span>
+              <span class="gallery-tag gallery-tag--model">Nano Banana Pro</span>
+            </div>
+          </div>
+        </template>
+      </article>
+
+      <article class="gallery-entry" data-brand="nyb">
+        <button class="gallery-card" type="button" aria-label="Open detail — NY Bae Velvet Mousse Lipstick (flatlay)">
+          <img src="assets/Gallery/nyb_velvet-mousse-lipstick_nbp_11/main-thumb.jpg" alt="NY Bae Velvet Mousse Lipstick — AI-generated product image" width="1000" height="1000" loading="lazy">
+        </button>
+        <template class="gallery-detail-tmpl">
+          <div class="gallery-detail">
+            <img class="gallery-detail__main" src="assets/Gallery/nyb_velvet-mousse-lipstick_nbp_11/main.jpg" alt="NY Bae Velvet Mousse Lipstick — AI-generated product image">
+            <div class="gallery-detail__refs">
+              <img src="assets/Gallery/nyb_velvet-mousse-lipstick_nbp_11/ref-01.jpg" alt="NY Bae Velvet Mousse Lipstick — reference image 1">
+              <img src="assets/Gallery/nyb_velvet-mousse-lipstick_nbp_11/ref-02.jpg" alt="NY Bae Velvet Mousse Lipstick — reference image 2">
+            </div>
+            <div class="gallery-detail__prompt-head">
+              <h3>Prompt</h3>
+              <button class="gallery-copy" type="button">Copy</button>
+            </div>
+            <div class="gallery-prompt">
+              <p>Photograph an art directed flatlay shot of just the velvet mousse liquid lipstick placed on top of it's liquid mousse texture, swatched with lines exactly as seen in the reference uploaded. The colour should match the rust deep reddish brown seen inside the tube.</p>
+            </div>
+            <div class="gallery-detail__tags">
+              <span class="gallery-tag">NY Bae</span>
+              <span class="gallery-tag">Velvet Mousse Lipstick</span>
               <span class="gallery-tag gallery-tag--model">Nano Banana Pro</span>
             </div>
           </div>
@@ -253,6 +373,8 @@
         list.querySelectorAll('.gallery-entry')
       );
       if (entries.length === 0) return;
+      var filterSelect = document.getElementById('gallery-brand-filter');
+      var activeBrand = 'all';
 
       function columnCount() {
         return window.innerWidth <= 820 ? 2 : 3;
@@ -277,6 +399,9 @@
           cols.push({ el: col, h: 0 });
         }
         entries.forEach(function (entry) {
+          // Skip entries that don't match the active brand filter.
+          if (activeBrand !== 'all' &&
+              entry.getAttribute('data-brand') !== activeBrand) return;
           var shortest = cols[0];
           for (var j = 1; j < cols.length; j++) {
             if (cols[j].h < shortest.h) shortest = cols[j];
@@ -288,6 +413,14 @@
       }
 
       layout();
+
+      if (filterSelect) {
+        filterSelect.addEventListener('change', function () {
+          activeBrand = filterSelect.value;
+          layout();
+        });
+      }
+
       var debounce;
       window.addEventListener('resize', function () {
         clearTimeout(debounce);
