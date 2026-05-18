@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Video Creator Workflow — Lucid.</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="workflows-page">
+
+<div class="film-grain"></div>
+<div class="aura aura-violet"></div>
+<div class="aura aura-red"></div>
+<div class="aura aura-violet-2"></div>
+<div class="aura aura-red-2"></div>
+<div class="aura aura-violet-3"></div>
+
+<div class="page-wrapper">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Lucid<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="workflows.html" class="active">workflows</a></li>
+      <li><a href="request.html">request lucid</a></li>
+      <li><a href="faqs.html">faqs</a></li>
+    </ul>
+  </nav>
+  <a href="workflows.html" class="back-link">+ back to workflows</a>
+  <div class="workflow-detail-page">
+    <div class="wf-category">Workflow</div>
+    <h1>UGC Video Creator Workflow</h1>
+    <p class="wf-lead">This workflow helps you create a UGC-style video ad for any product that's live on Purplle with a PDP and reviews. It covers the whole pipeline: gathering product information, writing the ad script (including attention-grabbing hooks), image generation, video generation, and the final video edit.</p>
+    <p class="wf-note"><strong>When to use this:</strong> For creating engaging UGC-style Instagram Reels, YouTube Shorts, or UGC-style PDP videos for your product, made entirely with generative AI tools.</p>
+    <p class="wf-note"><strong>What this is not:</strong> This isn't for simple product display or demo videos. It follows a UGC-style narrative video structure.</p>
+    <p class="wf-note"><strong>How to use:</strong> Work through the steps in order, in one continuous GPT chat. Each step builds on the last. Steps with a prompt have a copy button; later steps are tool instructions you follow in Higgsfield, Kling, ElevenLabs, Descript, HeyGen, and Canva. All these tools use the shared team Glamrs login — ask Lucid for the credentials if you don't have them.</p>
+
+    <div class="accordion">
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-01">
+        <span class="accordion__label"><span class="accordion__step">Step 01 — Starter Prompt</span><span class="accordion__summary"> · Give GPT the context for the whole workflow.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-01">
+        <p class="accordion__note">Start a new GPT chat and paste in the starter prompt below. This gives GPT the context of what you're creating, and it will stay within these guidelines for the rest of the chat.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">You are creating a complete set of UGC-style, phone-shot visual assets for an Indian beauty brand.
+
+The output is not a single image or clip.
+The output is a coherent visual system for one video.
+
+All visuals must feel like they were filmed:
+- By the same woman
+- In the same space
+- During the same filming session
+- Using the same phone
+
+This is a visual continuity system, not standalone shots.
+
+Format: Please don't give me too much information at once, always explain only one idea at a time to me, and only when I tell you I have understood it and am ready to move on, then do so.
+
+Don't give me a game plan next, I'm following a workflow, so just ask me for the next step.</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-02">
+        <span class="accordion__label"><span class="accordion__step">Step 02 — Feeding Product Information</span><span class="accordion__summary"> · Build a product information card — two ways.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-02">
+        <p class="accordion__note">There are two ways to build your product information card. Choose based on whether your product already has internal research.</p>
+        <p class="accordion__note"><strong>Option A — Product is in the Generated Products drive.</strong> The D2S team has interviewed Brand Managers and built detailed documents for some PB products. If your product is in the internal drive, download all the documents in its Logs folder and use them with the prompt below to get a product information card. Ask Lucid for access to the Generated Products drive.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">ROLE
+You are a structured data-extraction and synthesis agent.
+Your job is to create one exhaustive INTERNAL product information card by reading the uploaded documents.
+This task is purely factual.
+Do not:
+- Market the product
+- Improve wording
+- Add skincare knowledge
+- Infer intent or benefits
+- Fill gaps creatively
+If information is not explicitly stated, write "Not found".
+Accuracy and completeness are more important than brevity.
+
+SOURCE CONSTRAINT
+Use ONLY the uploaded internal documents:
+- Brand identity
+- Product research
+- USP and themes
+- Funnel stage notes
+- SKU, pricing, packaging, audience or strategy files
+Do NOT use PDPs, reviews, or external knowledge.
+
+EXTRACTION LOGIC (IMPORTANT)
+You must perform one full scan of all documents.
+For each section below:
+- Actively search for relevant information
+- Collect all matching details
+- Preserve original phrasing where possible
+- If multiple statements exist, list all
+If a section has zero explicit data, return "Not found".
+
+INFORMATION CLASSES TO EXTRACT
+
+1. PRODUCT IDENTIFICATION
+Extract: Brand name; Product name; Product category; Sub-category or format (if mentioned); Variant names; Size / quantity; Any additional SKUs or minis mentioned
+
+2. PRICE &amp; COMMERCIAL STRUCTURE
+Extract: MRP; Selling price(s); Discount values; Pack pricing; Offer mechanics; Threshold offers; Bundle mentions
+Use exact wording from documents.
+
+3. PRODUCT FORMAT &amp; PHYSICAL ATTRIBUTES
+Extract: Form factor (jar, tube, pump, etc.); Material (plastic, glass, etc.); Texture description (if documented); Packaging shape; Dominant colours; Visual design notes; Any references to clinical / fun / premium / accessible look
+
+4. INGREDIENT STRUCTURE (INTERNAL VIEW)
+Extract: Hero ingredient(s); Supporting ingredients; Ingredient groupings (e.g. "boosted with"); Any percentages; Any hierarchy of actives
+Do NOT explain benefits unless explicitly written.
+
+5. CLAIMS &amp; ASSERTIONS
+Extract verbatim: Primary claims; Secondary claims; Quantified claims (2X, 3X, 10X, etc.); Safety positioning; Approval mentions (dermat-approved, etc.); Time-to-results statements; Comparative statements (if stated)
+
+6. USAGE &amp; ROUTINE DEFINITION
+Extract: How to use instructions; Frequency; Time of use (day/night); Routine placement (first step, last step, etc.); Application cues; Caution notes or disclaimers
+
+7. TARGET USER INTELLIGENCE
+Extract only what is explicitly stated: Age range; Gender; Geography; Income / SEC; Primary target group; Secondary target group; Use-case users (beginners, men, teens, etc.)
+
+8. PSYCHOGRAPHIC &amp; MOTIVATIONAL SIGNALS
+Extract: Attitudes; Frustrations; Values; Purchase drivers; Emotional or mindset descriptors
+Use document language only.
+
+9. BRAND &amp; COMMUNICATION SYSTEM
+Extract: Brand persona descriptors; Tone or voice cues; Brand archetype language; Typography; Colour system; Visual language notes
+
+10. INTERNAL THEMES &amp; STRATEGIC FRAMING
+Extract: Core themes; Non-primary themes; Usage-led themes; Benefit-led themes; Social proof or trust themes; Funnel-stage positioning cues
+Do not prioritise or reinterpret.
+
+FINAL OUTPUT FORMAT (STRICT)
+Return one clean, structured card:
+
+PRODUCT INFO CARD — INTERNAL INTELLIGENCE (NON-PDP)
+
+BASICS
+Brand:
+Product Name:
+Category:
+Variant / Size:
+Additional SKUs:
+
+PRICE &amp; VALUE
+MRP:
+Selling Price:
+Discount:
+Offer Notes:
+
+PRODUCT FORMAT &amp; PHYSICAL ATTRIBUTES
+Form Factor:
+Material:
+Packaging Description:
+Texture (if mentioned):
+Dominant Colours:
+
+INGREDIENT STRUCTURE
+Hero Ingredient(s):
+Supporting Ingredients:
+Ingredient Percentages:
+
+CLAIMS &amp; POSITIONING
+
+USAGE &amp; ROUTINE
+How to Use:
+Frequency:
+Routine Placement:
+Cautions:
+
+TARGET USER INTELLIGENCE
+Demographics:
+Primary TG:
+Secondary TG:
+
+PSYCHOGRAPHIC SIGNALS
+
+BRAND &amp; COMMUNICATION CONTEXT
+Brand Persona:
+Typography:
+Visual Language:
+
+INTERNAL THEMATIC FRAMING
+Core Themes:
+Secondary Themes:</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+        <p class="accordion__note"><strong>Option B — Product is not in the drive.</strong> If your product isn't in the drive, build the card from its Purplle PDP and reviews instead. Copy the prompt below, add your product's PDP link and screenshots of a few detailed reviews, and make sure Agent Mode is selected before you send it. If a mini computer screen opens in your GPT chat, agent mode is working and GPT is crawling the PDP.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">You are a data-extraction and synthesis agent.
+Your task is to perform ONE complete crawl across TWO Purplle URLs + Screenshots of reviews for the SAME product and return ONE hook-ready product intelligence card.
+This task is purely factual and observational.
+Do NOT market the product.
+Do NOT infer, interpret, summarize, embellish, or add skincare knowledge.
+If information is not clearly visible on the page(s), return "Not found".
+Source of truth:
+- Purplle Product Detail Page (PDP)
+- Purplle Reviews Page (with reviews expanded)
+No external assumptions.
+No creative framing.
+Accuracy is more important than completeness.
+
+––––––––––––––––––
+INPUT
+––––––––––––––––––
+Purplle PDP URL:
+[Enter PDP page link here]
+Purplle Reviews URL:
+[Enter PDP reviews page link here]
+
+––––––––––––––––––
+CRAWL &amp; EXTRACTION TASKS
+––––––––––––––––––
+1. PRODUCT FACTS (FROM PDP ONLY)
+Extract exactly as written:
+- Brand name
+- Full product name
+- Product category (as implied by the page)
+- Variant name
+- Size / quantity
+
+2. PRICE &amp; VALUE CONTEXT (FROM PDP ONLY)
+Extract:
+- MRP (₹)
+- Current selling price (₹)
+- Discount (₹ or %, if mentioned)
+- Active offer text (exact wording)
+IMPORTANT:
+- Do NOT extract stock counts or "items left" indicators
+- Ignore availability quantity as it is dynamic
+
+3. RATINGS SNAPSHOT (FROM PDP / REVIEWS HEADER)
+Extract:
+- Average rating
+- Total number of ratings
+- Any credibility labels shown (e.g. "verified users")
+
+4. CLAIMS &amp; POSITIONING (FROM PDP ONLY)
+Extract verbatim:
+- Headline claims
+- Bullet-point claims
+- "Why you'll love it" or equivalent sections
+- Any percentage-based customer agreement claims (e.g. "90% users agree…")
+Do NOT rephrase.
+Do NOT translate into benefits.
+Do NOT soften or strengthen language.
+
+5. INGREDIENT INTELLIGENCE (FROM PDP / INGREDIENT IMAGES)
+Extract:
+- Full ingredient list (as shown)
+- Highlighted ingredients
+- Any ingredient percentages mentioned
+If ingredients appear only in an image or visual block:
+- Transcribe exactly as visible
+
+6. USAGE &amp; SUITABILITY (FROM PDP ONLY)
+Extract:
+- "How to use" instructions
+- Skin type suitability
+- Concern-based positioning (as written)
+
+7. REVIEW LANGUAGE &amp; USER SIGNALS (FROM REVIEWS PAGE)
+You must scroll and read multiple reviews.
+Extract ONLY language users actually use.
+A. REVIEW TAGS / FILTERS
+- All visible review tags or filters
+- Associated percentages or counts if shown
+B. COMMON USER PHRASES (VERBATIM)
+Extract repeated phrases users use to describe:
+- Texture
+- Feel
+- Absorption
+- Comfort
+- Value
+- Results
+List phrases exactly as written.
+Do NOT paraphrase.
+C. PAIN SIGNALS (VERBATIM)
+Extract statements indicating:
+- What users disliked in other products
+- What problem this product solved
+- Frustration, fatigue, relief, or scepticism
+
+8. USER SEGMENT CLUES (FROM REVIEWS ONLY)
+Based ONLY on explicit mentions, extract:
+- Skin types mentioned
+- Usage frequency mentions (daily, regular, etc.)
+- Climate / feel references (heat, sweat, grease, stickiness)
+Do NOT infer demographics.
+
+––––––––––––––––––
+FINAL OUTPUT FORMAT (STRICT)
+––––––––––––––––––
+Return ONE clean card in the following structure:
+
+PRODUCT INFO CARD — HOOK READY
+
+BASICS
+Brand:
+Product Name:
+Category:
+Variant / Size:
+
+PRICE &amp; VALUE
+MRP:
+Selling Price:
+Discount:
+Active Offers:
+
+RATINGS
+Average Rating:
+Number of Ratings:
+Credibility Labels:
+
+CLAIMS (AS WRITTEN)
+-
+-
+-
+
+INGREDIENTS
+Full Ingredient List:
+Highlighted Ingredients / %:
+
+USAGE &amp; POSITIONING
+How to Use:
+Skin Type / Concerns:
+
+REVIEW SIGNALS
+Top Review Tags:
+-
+-
+-
+Common User Phrases:
+-
+-
+-
+Repeated Pain Points:
+-
+-
+-
+
+USER SEGMENT CLUES
+Explicit Skin Types Mentioned:
+Usage Frequency Mentions:
+Feel / Climate Mentions:
+
+––––––––––––––––––
+NON-NEGOTIABLE RULES
+––––––––––––––––––
+- Do NOT guess missing data
+- Do NOT rewrite into marketing language
+- Do NOT merge or summarise phrases
+- Use exact wording wherever possible
+- If information appears multiple times, choose the clearest instance
+- This output must be usable directly for ad hook writing
+End task.</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-03">
+        <span class="accordion__label"><span class="accordion__step">Step 03 — Hook Identification</span><span class="accordion__summary"> · Get 5 ranked hook options for your product.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-03">
+        <p class="accordion__note">Once you have your product information card, copy the prompt below to identify the best hook type for your video. GPT will give you 5 hook options, ranked by effectiveness and product fit. Choose one to carry into the scripting step.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">You are a hook-strategy agent.
+Your task is to identify the BEST-SUITED hook types for the given product,
+based strictly on the Product Info Card (available in this chat) and real user signals.
+You are NOT writing full hook copy or scripts yet.
+You are deciding which hook TYPES are worth attempting
+AND proving that each hook can open a real video.
+You must understand what each hook type means before selecting.
+Do not include all hook types by default.
+Select ONLY the 5 most suitable hook types.
+
+––––––––––––––––––
+HOOK TYPES — DEFINITIONS &amp; STRUCTURE
+––––––––––––––––––
+01. INVESTMENT HOOK
+Meaning:
+Frames the product as the result of time, money, or effort wasted before finding a real solution.
+Core structure:
+"I spent [x time / money] trying to fix this…"
+Use when:
+- Users tried multiple products
+- Reviews mention frustration or waste
+- Category has many failed alternatives
+––––––––––––––––––
+02. SCAM HOOK
+Meaning:
+Challenges a widely believed claim or category promise to trigger loss aversion and curiosity.
+Core structure:
+"[Common belief] is a scam."
+Use when:
+- Category overpromises
+- Users are skeptical
+- Product wins through honesty or simplicity
+––––––––––––––––––
+03. GIVE ME TIME HOOK
+Meaning:
+Asks directly for attention by promising to change the viewer's opinion quickly.
+Core structure:
+"Give me [x seconds] to change how you think about [pain point]."
+Use when:
+- Product shows immediate feel or effect
+- Proof can be shown fast (texture, absorption, comfort)
+––––––––––––––––––
+04. POV YOU HATE X HOOK
+Meaning:
+Calls out a strong, emotionally charged frustration the user already feels.
+Core structure:
+"POV: you hate [pain point]."
+Use when:
+- Pain point is repeated and obvious
+- Reviews show strong dislike or irritation
+––––––––––––––––––
+05. WHY DID NO ONE TELL ME HOOK
+Meaning:
+Creates a curiosity gap by suggesting the user has been unknowingly doing something wrong.
+Core structure:
+"Why did no one tell me [habit] was wrong?"
+Use when:
+- There is a common misuse or misunderstanding
+- Product reframes a habit or belief
+––––––––––––––––––
+06. IF YOU… HOOK
+Meaning:
+Triggers attention by calling out a specific group or identity.
+Core structure:
+"If you are [user group], you need to hear this."
+Use when:
+- Product clearly serves a defined user group
+- Reviews explicitly mention skin type or routine
+
+––––––––––––––––––
+DECISION LOGIC (MANDATORY)
+––––––––––––––––––
+Select hook types based on:
+- Repetition and intensity of user pain points
+- Category fatigue or overpromise
+- Trust signals (ratings, review volume)
+- Price positioning
+- Speed of perceived benefit (instant feel vs long-term)
+- Whether the product is comfort-led or corrective
+
+––––––––––––––––––
+OUTPUT FORMAT (STRICT)
+––––––––––––––––––
+Return EXACTLY 5 hook options in ranked order.
+For EACH hook, you MUST include ONE example opening hook line.
+Format:
+1. Hook Type:
+   Why this hook fits this product:
+   Core belief or pain it targets:
+   Best suited user mindset:
+   Example Opening Hook Line:
+(repeat 1–5)
+
+––––––––––––––––––
+RULES
+––––––––––––––––––
+- Do not write full hook scripts
+- Do not write 30-second scripts
+- Example opening line must be 1 sentence only
+- Do not invent pains not present in the Product Info Card
+- Be decisive and practical</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-04">
+        <span class="accordion__label"><span class="accordion__step">Step 04 — Script Writing</span><span class="accordion__summary"> · Turn your chosen hook into a 30-second script.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-04">
+        <p class="accordion__note">After choosing your hook, copy the prompt below. Paste your selected hook into the [PASTE YOUR SELECTED HOOK OUTPUT FROM STEP 03 HERE] section, and pick your script's tone from the options given (or write your own). Paste the whole thing into your GPT chat. If you're not happy with any part of the script, iterate — ask GPT for corrections, variations, or give it an example script to write more like.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">You are a UGC scriptwriter.
+Your task is to write:
+1) ONE hook
+2) ONE 30-second UGC talkie script
+
+The script must be based ONLY on the Product Info Card provided.
+Do not add claims, ingredients, or outcomes not present in the card.
+Do not exaggerate.
+Do not sound salesy or scripted.
+The script must sound like a real Indian person speaking comfortably in Indian English.
+
+––––––––––––––––––
+INPUT
+––––––––––––––––––
+SELECTED HOOK TYPE:
+[PASTE YOUR SELECTED HOOK]
+TONE:
+[Calm &amp; honest / Direct &amp; conversational / Confident but friendly]
+
+––––––––––––––––––
+PART 1 — HOOK OUTPUT
+––––––––––––––––––
+[PASTE YOUR SELECTED HOOK OUTPUT FROM STEP 03 HERE]
+
+––––––––––––––––––
+PART 2 — 30 SECOND SCRIPT
+––––––––––––––––––
+Write a natural, spoken UGC script using this structure:
+[0–3s] Pattern interrupt / attention line
+[3–7s] Relatable pain from real life
+[7–15s] "But that's why…" personal anecdote or realisation
+[15–22s] Product truth using ONLY card data
+[22–27s] Trust cue (ratings, reviews, affordability, daily use)
+[27–30s] Soft CTA (non-pushy)
+
+––––––––––––––––––
+LANGUAGE &amp; TONE RULES (NON-NEGOTIABLE)
+––––––––––––––––––
+- Write in comfortable Indian English
+- Conversational, soft, familiar — like talking to a friend
+- Use natural Indian speech markers where appropriate (e.g. "honestly", "actually", "quite", "not heavy at all")
+- Avoid American slang or overly punchy ad language
+- Avoid dramatic emphasis or influencer exaggeration
+- Keep sentences easy to speak in one breath
+- No miracle, instant, or guaranteed claims
+
+––––––––––––––––––
+QUALITY CHECK (MANDATORY)
+––––––––––––––––––
+Before finalising:
+- Does this sound natural if spoken by an Indian creator?
+- Does it feel like a lived experience, not a pitch?
+- Are all claims traceable to the Product Info Card?
+- Would this still feel believable without visuals?
+If yes, return output.
+If no, rewrite.</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-05">
+        <span class="accordion__label"><span class="accordion__step">Step 05 — B-Roll Shots Director</span><span class="accordion__summary"> · Convert your script into a detailed shot list.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-05">
+        <p class="accordion__note">Once you have a script you like, copy the prompt below to start visualising shots for it. Review the shot list GPT suggests. If the shots don't match what you want, iterate and ask for changes.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">You are a UGC visual director.
+Your task is to convert a spoken UGC script into a detailed, engaging shot list.
+The goal is to SHOW the creator's lived experience with the product,
+not to rely on talking-to-camera alone.
+This shot list must feel:
+- Real
+- Dynamic
+- Phone-shot
+- Follow-the-creator-through-the-day
+
+––––––––––––––––––
+SHOT LIST PRINCIPLES (NON-NEGOTIABLE)
+––––––––––––––––––
+- Same character throughout the video
+- Shots should feel like they happen on the same day
+- Not all shots should be indoors
+- Include a mix of:
+  - Texture shots (macro / extreme close-up)
+  - Application shots (face / hand)
+  - Lifestyle shots (movement, work, outdoors)
+  - Reaction shots (touching skin, expressions)
+  - Proof or context shots (phone, reviews, price)
+- Avoid long sequences of just talking to camera
+- Use natural phone-camera behaviour (selfie mode, crash zooms, walking shots)
+
+––––––––––––––––––
+OUTPUT FORMAT (STRICT)
+––––––––––––––––––
+For EACH spoken line, return:
+SPOKEN LINE:
+1A. Primary shot (clearly communicates the line)
+1B. Supporting B-roll shot
+1C. Optional texture / reaction / movement shot
+Label shots sequentially (1A, 1B, 1C…).
+Be visually specific.
+Do not use cinematic or technical camera jargon.
+
+––––––––––––––––––
+REFERENCE EXAMPLE (FOR QUALITY ONLY)
+––––––––––––––––––
+The following is an example of the expected depth and variety.
+Do NOT copy it literally — use it as a quality benchmark.
+SPOKEN LINE:
+"POV: you hate it when your moisturiser feels greasy after five minutes."
+1A. Extreme close-up of a super slick, shiny gel texture dripping out of a moisturiser tub
+1B. Close-up selfie shot of the model leaning into the front camera, patting moisturiser on her cheek
+1C. Selfie-style walking shot on a sunny Mumbai street in the afternoon, skin looking shiny and uncomfortable
+SPOKEN LINE:
+"Honestly, every time I try to be regular with skincare, my face just feels sticky…"
+2A. Fisheye-style close-up of the model's face near the camera, rapidly applying multiple products
+2B. Medium close-up of the model sitting at her work desk, laptop open, touching oily skin
+2C. Side-angle medium shot of the model washing her face in an office bathroom
+SPOKEN LINE:
+"But that's why I stopped using thick creams and switched to a gel moisturiser."
+3A. Model holds a tub of thick cream close to the camera, showing dense texture
+3B. The same tub being dropped into a dustbin
+3C. Extreme close-up of a gel moisturiser being applied to the back of her hand, focus on texture
+SPOKEN LINE:
+"This is the DermDoc Hydrolyzed Collagen Face Gel…"
+4A. Quick iPhone-style crash zoom from 1x to 2x onto the product placed in the base look
+4B. Medium shot of the model holding the product near her cheek with a smile
+4C. Extreme close-up of the gel texture inside the tub
+4D. Extreme close-up of the model swatching gel on her cheek
+4E. Medium close-up of the model patting moisturiser into her skin
+4F. Selfie shot touching skin, smiling to show non-greasy finish
+SPOKEN LINE:
+"It has a 4.2 rating with a lot of reviews…"
+5A. Top-down flatlay-style shot of the model scrolling on her phone in bed
+5B. Side-profile shot of her smiling while reading reviews
+5C. Frontal shot comparing two moisturisers in her hands
+5D. Product placed on a table with two ₹100 notes beside it
+SPOKEN LINE:
+"If you also hate greasy moisturisers, you might actually like this."
+6A. Medium shot of the model holding the product while saying the line
+6B. Product-forward shot as she extends the product toward the camera
+
+––––––––––––––––––
+FINAL RULE
+––––––––––––––––––
+Your output must match the richness, variety, and realism of the example above.
+If the shot list feels boring or repetitive, rewrite it.</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-06">
+        <span class="accordion__label"><span class="accordion__step">Step 06 — Consistent Model NBP Prompt Gen</span><span class="accordion__summary"> · Lock a model look and generate NBP prompts per shot.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-06">
+        <p class="accordion__note">Now you start generating. Choose one of the model looks below — this becomes your locked model look. Paste your chosen model image along with a B-roll shot description from your shot list to get a visually accurate Nano Banana Pro prompt that uses your locked look as a reference image every time.</p>
+        <p class="accordion__note">After the first shot, you can just paste the shot description for the remaining shots — GPT will keep the context. If you're adding another reference photo (a product photo, a pose reference), upload it to GPT first so it knows to mention multiple reference images in the prompt.</p>
+        <div class="copy-block">
+          <pre class="prompt-pre js-copy-text">You are acting as an expert Nano Banana Pro prompter in reference to beauty product design creation.
+
+Use the provided REFERENCE IMAGE as the source of truth for:
+- the model's identity (same person)
+- hair, makeup, outfit, jewellery
+- overall vibe and phone-shot realism
+- base environment look and color world
+
+Non-negotiable:
+- Keep the same model and same styling as the reference
+- Keep the same background environment unless this shot explicitly requires a different location
+- Do not beautify, retouch, smooth, or stylize
+
+Now generate this shot:
+SHOT REQUIREMENT: [paste the shot description]
+
+Output:
+Return ONE NanoBanana prompt that references the reference image and describes only what changes for this shot (framing, action, location, prop interaction).</pre>
+          <button class="gallery-copy" type="button">Copy</button>
+        </div>
+        <!-- ROUND 2: 5 model look images + descriptions go here -->
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-07">
+        <span class="accordion__label"><span class="accordion__step">Step 07 — Image Gen in Higgsfield</span><span class="accordion__summary"> · Generate your model images in Higgsfield.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-07">
+        <p class="accordion__note">Take your Nano Banana Pro prompts from GPT into Higgsfield and generate images of your consistent model. Upload the prompt plus your reference images when generating.</p>
+        <p class="accordion__note">Tips: Unlimited mode lets you generate without spending a credit, but takes longer — skip it if you're in a hurry. 4K gives the best quality and closest adherence to your prompt, but also takes longer.</p>
+        <p class="accordion__note">Higgsfield uses the shared team Glamrs login.</p>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-08">
+        <span class="accordion__label"><span class="accordion__step">Step 08 — Talkie Image Generation</span><span class="accordion__summary"> · Generate 4 varied talkie frames.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-08">
+        <p class="accordion__note">There are two parts to your visuals: the spoken frames (talkies) and the action shots (B-roll). You've already generated the B-roll. For talkies, use the 4 prompts to generate 4 different types of talkie frame, so each spoken line in your video looks fresh and varied.</p>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-09">
+        <span class="accordion__label"><span class="accordion__step">Step 09 — B-Roll Generation</span><span class="accordion__summary"> · Animate your B-roll images in Kling.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-09">
+        <p class="accordion__note">Take all the images you generated for the B-roll part of the workflow and animate them. The key to seamless, realistic video is one smooth action per clip. Use first-frame and last-frame both when you know exactly how a shot should end, for example when the model shows the product to camera and you want it to look correct. On Kling, 2.6 is the best video model as of early 2026; use 2.5 Turbo for quicker, cheaper generations. In most cases keep native audio off — you'll add music, sound effects, and voiceover in the final edit.</p>
+        <p class="accordion__note">Kling uses the shared team Glamrs login.</p>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-10">
+        <span class="accordion__label"><span class="accordion__step">Step 10 — Voice Over Generation</span><span class="accordion__summary"> · Record your VO and convert it in ElevenLabs.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-10">
+        <p class="accordion__note">The best delivery comes from a real voice. Record your script's voiceover yourself, or have someone comfortable on camera do it. Then go to ElevenLabs, use the voice changer feature, and pick an Indian-accent voice that suits your character. Generate with the standard settings first; hover over each setting to see what it does.</p>
+        <p class="accordion__note">ElevenLabs uses the shared team Glamrs login.</p>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-11">
+        <span class="accordion__label"><span class="accordion__step">Step 11 — Voice Over Editing</span><span class="accordion__summary"> · Cut your VO into per-line clips in Descript.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-11">
+        <p class="accordion__note">Once your full voiceover is generated in the new AI voice, cut every line of dialogue separately so you can make a talkie video for each one. In Descript, open a new audio project. When exporting, select "Current Selection" so you get just the highlighted clip, not the whole file. Once the audio is transcribed you can select each line individually. To change a word, select it and rewrite it — it regenerates in the same voice.</p>
+        <p class="accordion__note">Descript uses the shared team Glamrs login.</p>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-12">
+        <span class="accordion__label"><span class="accordion__step">Step 12 — Talkie Video Gen</span><span class="accordion__summary"> · Create talkie clips in HeyGen.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-12">
+        <p class="accordion__note">Go to HeyGen and create talkie clips from your audio chunks, one line at a time. Use Photo to Video mode and upload the image you want to turn into a talkie. If you're using a 1:1 image, click zoom-out so your final generation stays 1:1. You can prompt for extra motion (touching her skin, a hand gesture) under Advanced Settings.</p>
+        <p class="accordion__note">HeyGen uses the shared team Glamrs login.</p>
+      </div>
+
+      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="ugc-step-13">
+        <span class="accordion__label"><span class="accordion__step">Step 13 — Video Edit</span><span class="accordion__summary"> · Edit the final video.</span></span>
+        <span class="accordion__plus" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion__body is-collapsed" id="ugc-step-13">
+        <p class="accordion__note">The last step is editing. You can do this in Canva, InShot, the Instagram Edits app, or similar. Select your aspect ratio, upload all your footage, and stack your B-roll shots over your talkie clips following your shot list. Add text and graphics as needed.</p>
+        <p class="accordion__note">Canva uses the shared team Glamrs login.</p>
+      </div>
+
+    </div>
+
+    <h2>What you'll need</h2>
+    <ul>
+      <li>An active LLM subscription with agent mode (written for GPT)</li>
+      <li>Higgsfield, Kling, ElevenLabs, Descript, HeyGen, and a video editor (Canva or similar)</li>
+      <li>Your product's Purplle PDP and reviews, or its internal research documents</li>
+    </ul>
+  </div>
+  <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
+</div>
+
+<script src="assets/accordion.js?v=3" defer></script>
+<script src="assets/copy-button.js?v=3" defer></script>
+
+</body>
+</html>
