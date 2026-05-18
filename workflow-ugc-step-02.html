@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- GENERATED FILE — do not edit by hand. Edit tools/step-pages/content.py + tools/step-pages/template.html and re-run tools/step-pages/generate.py. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 02 — Feeding Product Information — Lucid.</title>
+<link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="workflows-page">
+
+<div class="film-grain"></div>
+<div class="aura aura-violet"></div>
+<div class="aura aura-red"></div>
+<div class="aura aura-violet-2"></div>
+<div class="aura aura-red-2"></div>
+<div class="aura aura-violet-3"></div>
+
+<div class="page-wrapper">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Lucid<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="workflows.html" class="active">workflows</a></li>
+      <li><a href="request.html">request lucid</a></li>
+      <li><a href="faqs.html">faqs</a></li>
+    </ul>
+  </nav>
+  <a href="workflow-ugc-video-creator.html" class="back-link">+ back to UGC Video Creator Workflow</a>
+  <div class="workflow-detail-page">
+    <div class="wf-category">UGC Video Creator Workflow</div>
+    <h1>Step 02 — Feeding Product Information</h1>
+    <p class="step-text">There are two ways to build your product information card. Choose based on whether your product already has internal research.</p>
+    <p class="step-text"><strong>Option A — Product is in the Generated Products drive.</strong> The D2S team has interviewed Brand Managers and built detailed documents for some PB products. If your product is in the internal drive, download all the documents in its Logs folder and use them with the prompt below to get a product information card. Ask Lucid for access to the Generated Products drive.</p>
+    <div class="copy-block">
+      <pre class="prompt-pre js-copy-text">ROLE
+You are a structured data-extraction and synthesis agent.
+Your job is to create one exhaustive INTERNAL product information card by reading the uploaded documents.
+This task is purely factual.
+Do not:
+- Market the product
+- Improve wording
+- Add skincare knowledge
+- Infer intent or benefits
+- Fill gaps creatively
+If information is not explicitly stated, write "Not found".
+Accuracy and completeness are more important than brevity.
+
+SOURCE CONSTRAINT
+Use ONLY the uploaded internal documents:
+- Brand identity
+- Product research
+- USP and themes
+- Funnel stage notes
+- SKU, pricing, packaging, audience or strategy files
+Do NOT use PDPs, reviews, or external knowledge.
+
+EXTRACTION LOGIC (IMPORTANT)
+You must perform one full scan of all documents.
+For each section below:
+- Actively search for relevant information
+- Collect all matching details
+- Preserve original phrasing where possible
+- If multiple statements exist, list all
+If a section has zero explicit data, return "Not found".
+
+INFORMATION CLASSES TO EXTRACT
+
+1. PRODUCT IDENTIFICATION
+Extract: Brand name; Product name; Product category; Sub-category or format (if mentioned); Variant names; Size / quantity; Any additional SKUs or minis mentioned
+
+2. PRICE &amp; COMMERCIAL STRUCTURE
+Extract: MRP; Selling price(s); Discount values; Pack pricing; Offer mechanics; Threshold offers; Bundle mentions
+Use exact wording from documents.
+
+3. PRODUCT FORMAT &amp; PHYSICAL ATTRIBUTES
+Extract: Form factor (jar, tube, pump, etc.); Material (plastic, glass, etc.); Texture description (if documented); Packaging shape; Dominant colours; Visual design notes; Any references to clinical / fun / premium / accessible look
+
+4. INGREDIENT STRUCTURE (INTERNAL VIEW)
+Extract: Hero ingredient(s); Supporting ingredients; Ingredient groupings (e.g. "boosted with"); Any percentages; Any hierarchy of actives
+Do NOT explain benefits unless explicitly written.
+
+5. CLAIMS &amp; ASSERTIONS
+Extract verbatim: Primary claims; Secondary claims; Quantified claims (2X, 3X, 10X, etc.); Safety positioning; Approval mentions (dermat-approved, etc.); Time-to-results statements; Comparative statements (if stated)
+
+6. USAGE &amp; ROUTINE DEFINITION
+Extract: How to use instructions; Frequency; Time of use (day/night); Routine placement (first step, last step, etc.); Application cues; Caution notes or disclaimers
+
+7. TARGET USER INTELLIGENCE
+Extract only what is explicitly stated: Age range; Gender; Geography; Income / SEC; Primary target group; Secondary target group; Use-case users (beginners, men, teens, etc.)
+
+8. PSYCHOGRAPHIC &amp; MOTIVATIONAL SIGNALS
+Extract: Attitudes; Frustrations; Values; Purchase drivers; Emotional or mindset descriptors
+Use document language only.
+
+9. BRAND &amp; COMMUNICATION SYSTEM
+Extract: Brand persona descriptors; Tone or voice cues; Brand archetype language; Typography; Colour system; Visual language notes
+
+10. INTERNAL THEMES &amp; STRATEGIC FRAMING
+Extract: Core themes; Non-primary themes; Usage-led themes; Benefit-led themes; Social proof or trust themes; Funnel-stage positioning cues
+Do not prioritise or reinterpret.
+
+FINAL OUTPUT FORMAT (STRICT)
+Return one clean, structured card:
+
+PRODUCT INFO CARD — INTERNAL INTELLIGENCE (NON-PDP)
+
+BASICS
+Brand:
+Product Name:
+Category:
+Variant / Size:
+Additional SKUs:
+
+PRICE &amp; VALUE
+MRP:
+Selling Price:
+Discount:
+Offer Notes:
+
+PRODUCT FORMAT &amp; PHYSICAL ATTRIBUTES
+Form Factor:
+Material:
+Packaging Description:
+Texture (if mentioned):
+Dominant Colours:
+
+INGREDIENT STRUCTURE
+Hero Ingredient(s):
+Supporting Ingredients:
+Ingredient Percentages:
+
+CLAIMS &amp; POSITIONING
+
+USAGE &amp; ROUTINE
+How to Use:
+Frequency:
+Routine Placement:
+Cautions:
+
+TARGET USER INTELLIGENCE
+Demographics:
+Primary TG:
+Secondary TG:
+
+PSYCHOGRAPHIC SIGNALS
+
+BRAND &amp; COMMUNICATION CONTEXT
+Brand Persona:
+Typography:
+Visual Language:
+
+INTERNAL THEMATIC FRAMING
+Core Themes:
+Secondary Themes:</pre>
+      <button class="gallery-copy" type="button">Copy</button>
+    </div>
+    <p class="step-text"><strong>Option B — Product is not in the drive.</strong> If your product isn't in the drive, build the card from its Purplle PDP and reviews instead. Copy the prompt below, add your product's PDP link and screenshots of a few detailed reviews, and make sure Agent Mode is selected before you send it. If a mini computer screen opens in your GPT chat, agent mode is working and GPT is crawling the PDP.</p>
+    <div class="copy-block">
+      <pre class="prompt-pre js-copy-text">You are a data-extraction and synthesis agent.
+Your task is to perform ONE complete crawl across TWO Purplle URLs + Screenshots of reviews for the SAME product and return ONE hook-ready product intelligence card.
+This task is purely factual and observational.
+Do NOT market the product.
+Do NOT infer, interpret, summarize, embellish, or add skincare knowledge.
+If information is not clearly visible on the page(s), return "Not found".
+Source of truth:
+- Purplle Product Detail Page (PDP)
+- Purplle Reviews Page (with reviews expanded)
+No external assumptions.
+No creative framing.
+Accuracy is more important than completeness.
+
+––––––––––––––––––
+INPUT
+––––––––––––––––––
+Purplle PDP URL:
+[Enter PDP page link here]
+Purplle Reviews URL:
+[Enter PDP reviews page link here]
+
+––––––––––––––––––
+CRAWL &amp; EXTRACTION TASKS
+––––––––––––––––––
+1. PRODUCT FACTS (FROM PDP ONLY)
+Extract exactly as written:
+- Brand name
+- Full product name
+- Product category (as implied by the page)
+- Variant name
+- Size / quantity
+
+2. PRICE &amp; VALUE CONTEXT (FROM PDP ONLY)
+Extract:
+- MRP (₹)
+- Current selling price (₹)
+- Discount (₹ or %, if mentioned)
+- Active offer text (exact wording)
+IMPORTANT:
+- Do NOT extract stock counts or "items left" indicators
+- Ignore availability quantity as it is dynamic
+
+3. RATINGS SNAPSHOT (FROM PDP / REVIEWS HEADER)
+Extract:
+- Average rating
+- Total number of ratings
+- Any credibility labels shown (e.g. "verified users")
+
+4. CLAIMS &amp; POSITIONING (FROM PDP ONLY)
+Extract verbatim:
+- Headline claims
+- Bullet-point claims
+- "Why you'll love it" or equivalent sections
+- Any percentage-based customer agreement claims (e.g. "90% users agree…")
+Do NOT rephrase.
+Do NOT translate into benefits.
+Do NOT soften or strengthen language.
+
+5. INGREDIENT INTELLIGENCE (FROM PDP / INGREDIENT IMAGES)
+Extract:
+- Full ingredient list (as shown)
+- Highlighted ingredients
+- Any ingredient percentages mentioned
+If ingredients appear only in an image or visual block:
+- Transcribe exactly as visible
+
+6. USAGE &amp; SUITABILITY (FROM PDP ONLY)
+Extract:
+- "How to use" instructions
+- Skin type suitability
+- Concern-based positioning (as written)
+
+7. REVIEW LANGUAGE &amp; USER SIGNALS (FROM REVIEWS PAGE)
+You must scroll and read multiple reviews.
+Extract ONLY language users actually use.
+A. REVIEW TAGS / FILTERS
+- All visible review tags or filters
+- Associated percentages or counts if shown
+B. COMMON USER PHRASES (VERBATIM)
+Extract repeated phrases users use to describe:
+- Texture
+- Feel
+- Absorption
+- Comfort
+- Value
+- Results
+List phrases exactly as written.
+Do NOT paraphrase.
+C. PAIN SIGNALS (VERBATIM)
+Extract statements indicating:
+- What users disliked in other products
+- What problem this product solved
+- Frustration, fatigue, relief, or scepticism
+
+8. USER SEGMENT CLUES (FROM REVIEWS ONLY)
+Based ONLY on explicit mentions, extract:
+- Skin types mentioned
+- Usage frequency mentions (daily, regular, etc.)
+- Climate / feel references (heat, sweat, grease, stickiness)
+Do NOT infer demographics.
+
+––––––––––––––––––
+FINAL OUTPUT FORMAT (STRICT)
+––––––––––––––––––
+Return ONE clean card in the following structure:
+
+PRODUCT INFO CARD — HOOK READY
+
+BASICS
+Brand:
+Product Name:
+Category:
+Variant / Size:
+
+PRICE &amp; VALUE
+MRP:
+Selling Price:
+Discount:
+Active Offers:
+
+RATINGS
+Average Rating:
+Number of Ratings:
+Credibility Labels:
+
+CLAIMS (AS WRITTEN)
+-
+-
+-
+
+INGREDIENTS
+Full Ingredient List:
+Highlighted Ingredients / %:
+
+USAGE &amp; POSITIONING
+How to Use:
+Skin Type / Concerns:
+
+REVIEW SIGNALS
+Top Review Tags:
+-
+-
+-
+Common User Phrases:
+-
+-
+-
+Repeated Pain Points:
+-
+-
+-
+
+USER SEGMENT CLUES
+Explicit Skin Types Mentioned:
+Usage Frequency Mentions:
+Feel / Climate Mentions:
+
+––––––––––––––––––
+NON-NEGOTIABLE RULES
+––––––––––––––––––
+- Do NOT guess missing data
+- Do NOT rewrite into marketing language
+- Do NOT merge or summarise phrases
+- Use exact wording wherever possible
+- If information appears multiple times, choose the clearest instance
+- This output must be usable directly for ad hook writing
+End task.</pre>
+      <button class="gallery-copy" type="button">Copy</button>
+    </div>
+    <nav class="step-nav">
+      <a class="step-nav__link step-nav__prev" href="workflow-ugc-step-01.html">&larr; Previous step</a>
+      <a class="step-nav__link step-nav__next" href="workflow-ugc-step-03.html">Next step &rarr;</a>
+    </nav>
+  </div>
+  <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
+</div>
+
+<script src="assets/copy-button.js?v=3" defer></script>
+
+</body>
+</html>

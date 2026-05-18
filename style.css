@@ -520,6 +520,8 @@ a:hover { color: var(--red); }
 .tov-footnote { margin-top: 40px; font-size: 0.85rem; color: #777777; }
 
 /* ---------- Accordion (shared — assets/accordion.js) ---------- */
+/* Unused after workflow pages converted to step grids — safe to remove.
+   accordion.js itself is still used by the Step 06 model grid. */
 .accordion { margin-top: 8px; }
 .accordion__header {
   display: flex; align-items: center; justify-content: space-between;
@@ -549,12 +551,9 @@ a:hover { color: var(--red); }
 .accordion__body .gallery-copy { margin-top: 14px; }
 .accordion__note--trailing { margin: 16px 0 0; }
 
-/* Card-style accordion — opt-in modifier for workflow step pages
-   (workflow-ugc-video-creator, workflow-reference-to-design). Additive
-   only: base .accordion / .accordion__* rules and accordion.js are not
-   touched, so the FAQs accordion and any other user is unaffected.
-   The header + body read as one card via [aria-expanded] and
-   :not(.is-collapsed) — no per-step wrapper needed. */
+/* Card-style accordion (.accordion--card) — unused after workflow pages
+   converted to step grids; safe to remove. accordion.js itself is still
+   used by the Step 06 model grid. */
 .accordion--card > .accordion__header {
   padding: 16px 20px;
   margin-top: 12px;
@@ -615,4 +614,62 @@ a:hover { color: var(--red); }
 
 @media (max-width: 600px) {
   .ugc-model { flex-basis: calc((100% - 12px) / 2); }
+}
+
+/* ---------- Workflow step grid + step detail pages ---------- */
+/* .step-grid replaces the accordion on the multi-step workflow pages;
+   each card links to that step's own detail page. */
+.step-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 8px;
+}
+.step-card {
+  display: flex; flex-direction: column;
+  aspect-ratio: 5 / 4; padding: 20px;
+  border: 1px solid rgba(191, 191, 191, 0.5);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(133, 120, 189, 0.15);
+  border-color: var(--violet);
+}
+.step-card:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.step-card__num {
+  font-family: var(--font); font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet);
+}
+.step-card__name {
+  font-family: var(--font); font-size: 1rem; font-weight: 500;
+  color: #222; margin-top: 6px;
+}
+.step-card__summary {
+  font-size: 0.82rem; line-height: 1.6; color: #777777; margin-top: 8px;
+}
+
+/* Step detail page body */
+.step-text { font-size: 0.95rem; line-height: 1.75; color: #555; margin: 0 0 14px; }
+.copy-block > .gallery-copy { margin-top: 14px; }
+.step-nav {
+  display: flex; gap: 16px; align-items: baseline;
+  margin-top: 40px; padding-top: 22px;
+  border-top: 1px solid rgba(191, 191, 191, 0.4);
+}
+.step-nav__link {
+  font-family: var(--font); font-size: 0.8rem; font-weight: 500;
+  color: var(--violet); text-decoration: none;
+}
+.step-nav__link:hover { color: var(--red); }
+.step-nav__prev { margin-right: auto; }
+.step-nav__next { margin-left: auto; }
+
+@media (max-width: 820px) {
+  .step-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .step-grid { grid-template-columns: 1fr; }
+  .step-card { aspect-ratio: auto; }
 }

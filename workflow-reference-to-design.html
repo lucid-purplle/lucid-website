@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reference to Design Workflow — Lucid.</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body class="workflows-page">
 
@@ -39,192 +39,42 @@
     <p class="wf-note"><strong>What this is not:</strong> a final artwork creation process, a moodboarding exercise, or a subjective visual exploration.</p>
     <p class="wf-note"><strong>How to use:</strong> Work through the 7 steps below in order. Each step has a prompt to copy into your LLM chat, and a note on what to do before you paste it (uploading MMs, competitor packs, references, and so on). Run them as a sequence in one continuous chat, since each step builds on the last.</p>
 
-    <div class="accordion accordion--card">
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-01">
-        <span class="accordion__label"><span class="accordion__step">Step 01 — Constraint Declaration</span><span class="accordion__summary"> · Give the LLM all the context about your product</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-01">
-        <p class="accordion__note">The first prompt you copy into an LLM. It gives the LLM all the context it needs about the product you're working on. Fill in the blanks and multiple-choice options before you paste.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as a brand systems designer.
-
-Context:
-- Style guide status: [locked / partially locked / evolving]
-- Brand name: [__________]
-- Product name (working): [__________]
-
-Non-negotiables:
-- Logo treatment: [__________]
-- Pack format (tube / bottle / jar): [__________]
-- Cap type: [__________]
-- Mandatory front-of-pack claims: [__________]
-- Regulatory constraints (if any): [__________]
-
-Flexible elements:
-- Colour system: [__________]
-- Illustration / icon usage: [__________]
-- Layout flexibility: [__________]
-
-Target price tier: [mass / masstige / premium]
-
-Confirm constraints back to me clearly before proceeding.
-Do not suggest any design yet.</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-      </div>
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-02">
-        <span class="accordion__label"><span class="accordion__step">Step 02 — Category Anchoring</span><span class="accordion__summary"> · Upload your MM and competitor packs for category analysis</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-02">
-        <p class="accordion__note">Upload the MM if you have it. If you don't, give whatever product info you have and note it may change once the MM is ready. Also upload competitor product pack images here. The LLM analyses what competitors do on their packs in the context of your product and category.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as a packaging category analyst.
-
-Product type: [e.g. glow sunscreen, barrier serum]
-Market: [India / global]
-Price tier: [mass / masstige / premium]
-
-I am uploading product marketing materials (MMs) and competitor pack images.
-
-Analyse ONLY front-of-pack packaging.
-
-Output:
-1. Typical claim hierarchy seen on shelf
-2. Approximate information density (low / medium / high)
-3. Common pack formats and proportions
-4. How trust is visually communicated
-5. How benefits are visually communicated
-
-Do not suggest design directions yet.</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-      </div>
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-03">
-        <span class="accordion__label"><span class="accordion__step">Step 03 — Visual Lever Extraction</span><span class="accordion__summary"> · Pull the repeatable visual patterns out of the competitor packs</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-03">
-        <p class="accordion__note">After the previous step you'll have a lot of information about competitor products and category best practices. This prompt helps the LLM pick up only the repeatable visual elements across all the competitor packs.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as a design systems analyst.
-
-Based on the analysed competitor packs, extract repeatable visual levers.
-
-Output only the following sections:
-- Colour system patterns
-- Divider / sectioning patterns
-- Icon or illustration language
-- Typography weight and placement tendencies
-- Placement logic for SPF, ingredients, and benefits
-
-Rules:
-- No brand names
-- No judgement of good or bad
-- No new ideas yet</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-      </div>
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-04">
-        <span class="accordion__label"><span class="accordion__step">Step 04 — Curated Visual Expansion</span><span class="accordion__summary"> · Get two Pinterest search terms for gathering references</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-04">
-        <p class="accordion__note">The extracted levers are technical. For more creative exploration, this prompt gives you 2 Pinterest search terms: one technical term for products in your category, and one creative term from a different or non-beauty category for visual reference. Treat them as a jumping-off point, not a limit.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as a visual research curator.
-
-Using the extracted design levers:
-1. Generate 1 precise Pinterest / visual search query
-2. Generate 1 Pinterest visual search query in a different product category for creative design inspiration - for example, a different ingredient led product or a non beauty product search.
-
-Rules:
-- Do not name brands
-- Avoid vague terms like "aesthetic", "vibe", or "modern"
-- Queries must be literal and directly searchable
-
-I will search using these terms and upload selected references next.</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-      </div>
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-05">
-        <span class="accordion__label"><span class="accordion__step">Step 05 — Design System Building</span><span class="accordion__summary"> · Turn the references into three candidate design systems</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-05">
-        <p class="accordion__note">The LLM analyses the Pinterest references you uploaded and suggests 3 distinct design systems. Once it describes them, respond with what you know about the brand's design style, any fixed design choices, and any set method to follow, such as the hierarchy of text and information on the front of pack.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as a packaging systems designer.
-
-Using:
-- Category analysis
-- Extracted visual levers
-- Uploaded Pinterest references
-
-Define:
-- 1 expected design system
-- 2 controlled outlier systems
-
-For each system, specify:
-- Colour logic
-- Primary benefit cue
-- Protection cue
-- Ingredient cue
-- Information hierarchy
-
-Do not generate visuals yet.</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-      </div>
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-06">
-        <span class="accordion__label"><span class="accordion__step">Step 06 — Nano Banana Prompt Generation</span><span class="accordion__summary"> · Convert the design systems into Nano Banana Pro mockup prompts</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-06">
-        <p class="accordion__note">The LLM converts the 3 aligned design systems into 3 clear Nano Banana Pro prompts that produce a product mockup. Upload the brand's logo as a reference image, and tell the LLM you'll be using it as a reference image so it refers to it as such in the final prompt.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as an expert Nano Banana Pro prompter in reference to beauty product design creation.
-
-Using the already-selected design system:
-- Write Nanobanana prompts to visualise the system accurately
-- Focus only on hierarchy, spacing, alignment, and claim density
-- Treat this as a layout and clarity test, not a creative exercise
-
-Rules:
-- Do not introduce new visual elements
-- Do not suggest stylistic improvements
-- Do not use "or" statements
-- Be precise, decisive, and minimal
-
-Your goal is to accurately verbalise exactly what visuals the product pack needs to have, in the form of a Nano Banana Pro prompt.</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-        <p class="accordion__note accordion__note--trailing">Note: you can upload the results you get from NBP to refine them. Ask the LLM to write the changes you want as an NBP prompt, using the image of the generation you want to edit as the reference image.</p>
-      </div>
-
-      <button class="accordion__header" type="button" aria-expanded="false" aria-controls="rtd-step-07">
-        <span class="accordion__label"><span class="accordion__step">Step 07 — Handling BM / Vendor Changes</span><span class="accordion__summary"> · Fold in BM or vendor changes after a direction is shared</span></span>
-        <span class="accordion__plus" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion__body is-collapsed copy-block" id="rtd-step-07">
-        <p class="accordion__note">This step comes up after you've shared your preferred option, if there are design changes from the BM or technical changes in the product. Upload the last final product image that the changes apply to, and ask the LLM to use it as the reference for your corrective NBP prompt.</p>
-        <pre class="prompt-pre js-copy-text">You are acting as a packaging problem-solver.
-
-New stakeholder / regulatory inputs:
-- [list new claims or changes here]
-
-Incorporate these into the existing system.
-
-Evaluate:
-1. What holds
-2. What feels crowded
-3. What hierarchy breaks
-
-Suggest fixes using only:
-- Hierarchy
-- Scale
-- Removal
-
-Do not add new visual languages.</pre>
-        <button class="gallery-copy" type="button">Copy</button>
-        <p class="accordion__note accordion__note--trailing">Note: you can repeat this process until you lock a design direction. Once locked, recreate the mockup in an Illustrator file for print.</p>
-      </div>
-
+    <div class="step-grid">
+      <a class="step-card" href="workflow-reference-step-01.html">
+        <span class="step-card__num">Step 01</span>
+        <span class="step-card__name">Constraint Declaration</span>
+        <span class="step-card__summary">Give the LLM all the context about your product</span>
+      </a>
+      <a class="step-card" href="workflow-reference-step-02.html">
+        <span class="step-card__num">Step 02</span>
+        <span class="step-card__name">Category Anchoring</span>
+        <span class="step-card__summary">Upload your MM and competitor packs for category analysis</span>
+      </a>
+      <a class="step-card" href="workflow-reference-step-03.html">
+        <span class="step-card__num">Step 03</span>
+        <span class="step-card__name">Visual Lever Extraction</span>
+        <span class="step-card__summary">Pull the repeatable visual patterns out of the competitor packs</span>
+      </a>
+      <a class="step-card" href="workflow-reference-step-04.html">
+        <span class="step-card__num">Step 04</span>
+        <span class="step-card__name">Curated Visual Expansion</span>
+        <span class="step-card__summary">Get two Pinterest search terms for gathering references</span>
+      </a>
+      <a class="step-card" href="workflow-reference-step-05.html">
+        <span class="step-card__num">Step 05</span>
+        <span class="step-card__name">Design System Building</span>
+        <span class="step-card__summary">Turn the references into three candidate design systems</span>
+      </a>
+      <a class="step-card" href="workflow-reference-step-06.html">
+        <span class="step-card__num">Step 06</span>
+        <span class="step-card__name">Nano Banana Prompt Generation</span>
+        <span class="step-card__summary">Convert the design systems into Nano Banana Pro mockup prompts</span>
+      </a>
+      <a class="step-card" href="workflow-reference-step-07.html">
+        <span class="step-card__num">Step 07</span>
+        <span class="step-card__name">Handling BM / Vendor Changes</span>
+        <span class="step-card__summary">Fold in BM or vendor changes after a direction is shared</span>
+      </a>
     </div>
 
     <h2>What you'll need</h2>
@@ -237,9 +87,6 @@ Do not add new visual languages.</pre>
   </div>
   <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
 </div>
-
-<script src="assets/accordion.js?v=3" defer></script>
-<script src="assets/copy-button.js?v=3" defer></script>
 
 </body>
 </html>
