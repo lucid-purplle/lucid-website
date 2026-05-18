@@ -494,3 +494,27 @@ a:hover { color: var(--red); }
   .gallery-overlay__panel { padding: 20px; }
   .gallery-overlay__close { top: 8px; right: 10px; }
 }
+
+/* ---------- DERMDOC Tone of Voice prompt blocks (workflow-dermdoc-tone-of-voice.html) ---------- */
+.tov-block { margin-top: 32px; }
+.tov-block__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 4px;
+}
+.tov-block__head h3 {
+  font-family: var(--font); font-size: 1rem; font-weight: 500; color: #222;
+}
+.tov-block__desc { font-size: 0.85rem; font-style: italic; color: #777777; margin-bottom: 12px; }
+.tov-prompt {
+  /* white-space: pre-wrap keeps the prompt's literal line breaks while
+     still wrapping long lines; the text copies out with formatting intact. */
+  white-space: pre-wrap;
+  font-family: var(--font-body); font-size: 0.82rem; line-height: 1.7;
+  color: #555;
+  background: rgba(133, 120, 189, 0.06);
+  border-left: 2px solid rgba(133, 120, 189, 0.45);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 18px; margin: 0;
+  overflow-x: auto;
+}
+.tov-footnote { margin-top: 40px; font-size: 0.85rem; color: #777777; }
