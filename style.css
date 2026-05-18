@@ -518,3 +518,48 @@ a:hover { color: var(--red); }
   overflow-x: auto;
 }
 .tov-footnote { margin-top: 40px; font-size: 0.85rem; color: #777777; }
+
+/* ---------- Accordion (shared — assets/accordion.js) ---------- */
+.accordion { margin-top: 8px; }
+.accordion__header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; width: 100%; padding: 16px 0; min-height: 44px;
+  border: 0; border-bottom: 1px solid rgba(191, 191, 191, 0.4);
+  background: transparent; cursor: pointer;
+  font-family: inherit; color: inherit; text-align: left;
+  transition: background 0.2s ease;
+}
+.accordion__header:hover { background: rgba(133, 120, 189, 0.04); }
+.accordion__header:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.accordion__label { flex: 1; min-width: 0; }
+.accordion__step { font-family: var(--font); font-weight: 500; font-size: 0.95rem; color: #222; }
+.accordion__summary { font-size: 0.85rem; color: #777777; }
+.accordion__plus {
+  flex-shrink: 0; font-family: var(--font); font-weight: 500;
+  font-size: 1.4rem; line-height: 1; color: var(--red);
+  transition: transform 0.3s ease;
+}
+.accordion__header[aria-expanded="true"] .accordion__plus { transform: rotate(45deg); }
+.accordion__body {
+  max-height: 6000px; overflow: hidden; padding-top: 18px;
+  transition: max-height 0.4s ease, padding-top 0.4s ease;
+}
+.accordion__body.is-collapsed { max-height: 0; padding-top: 0; }
+.accordion__note { font-size: 0.9rem; line-height: 1.7; color: #777777; margin: 0 0 14px; }
+.accordion__body .gallery-copy { margin-top: 14px; }
+.accordion__note--trailing { margin: 16px 0 0; }
+
+/* Prompt block — preformatted; line breaks preserved on screen and on copy */
+.prompt-pre {
+  white-space: pre-wrap;
+  font-family: var(--font-body); font-size: 0.82rem; line-height: 1.7;
+  color: #555;
+  background: rgba(133, 120, 189, 0.06);
+  border-left: 2px solid rgba(133, 120, 189, 0.45);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 18px; margin: 0;
+  overflow-x: auto;
+}
+
+/* Short labelled note line (workflow detail pages) */
+.wf-note { font-size: 0.92rem; line-height: 1.7; color: #777777; margin: 0 0 10px; }
