@@ -360,11 +360,13 @@ a:hover { color: var(--red); }
 }
 
 /* ---------- Homepage Gallery card (index.html) ---------- */
+/* Gradient copied verbatim from .card-workflows so the 4th card matches
+   the saturation/depth of the original three. */
 .gradient-card.card-gallery .card-bg {
   background:
-    radial-gradient(ellipse 110% 75% at 25% 20%, rgba(196, 181, 253, 0.92) 0%, transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(234, 60, 50, 0.5) 0%, transparent 55%),
-    linear-gradient(150deg, #c0b0f2 0%, #d8c8f5 30%, #e2a8a8 70%, #c86a6a 100%);
+    radial-gradient(ellipse 140% 70% at 30% 25%, rgba(196, 181, 253, 0.95) 0%, transparent 55%),
+    radial-gradient(ellipse 120% 80% at 70% 80%, rgba(234, 60, 50, 0.55) 0%, transparent 55%),
+    linear-gradient(160deg, #b8a8f0 0%, #d5c8f5 25%, #e8a8a0 65%, #cc6a6a 100%);
 }
 
 /* ---------- Image Gallery (gallery.html) ---------- */
