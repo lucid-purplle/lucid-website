@@ -33,13 +33,16 @@ h1, h2, h3, h4, h5, h6,
 .workflow-card .wf-category { font-family: var(--font); }
 
 .film-grain {
-  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  /* z-index 0: grain blends over the body background + auras only, beneath
+     page content — so content images (and text) are never grained.
+     Gradient/workflow cards keep their own ::after noise. */
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
   opacity: 0.45; mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
 }
 
-.aura { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
+.aura { position: fixed; border-radius: 50%; pointer-events: none; z-index: -1; }
 .aura-violet { width: 700px; height: 700px; top: -100px; right: -50px; background: radial-gradient(circle, rgba(133, 120, 189, 0.25) 0%, rgba(133, 120, 189, 0) 65%); filter: blur(80px); }
 .aura-red { width: 550px; height: 550px; top: 250px; right: 0px; background: radial-gradient(circle, rgba(234, 60, 50, 0.18) 0%, rgba(234, 60, 50, 0) 65%); filter: blur(90px); }
 .aura-violet-2 { width: 500px; height: 500px; top: 500px; left: -120px; background: radial-gradient(circle, rgba(133, 120, 189, 0.2) 0%, rgba(133, 120, 189, 0) 65%); filter: blur(80px); }

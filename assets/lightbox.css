@@ -9,7 +9,7 @@
      </div>
    Triggers are any element with class .howit-screenshot__trigger
    containing an <img> child.
-   z-index 10000 (film-grain is 9999).
+   z-index 10000 — above all page layers.
    ============================================================ */
 
 .lightbox {
