@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucid. — AI Workflows for Human Creators</title>
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -21,26 +21,33 @@
     <p class="home-tagline">AI Workflows for Human Creators</p>
   </header>
   <main style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div class="home-video">
+      <div class="home-video__frame">
+        <iframe id="brandFilm" src="https://www.youtube-nocookie.com/embed/3bwmlnkkKqs?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0" title="AI Brand Film // Jahn." frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <button class="home-video__unmute" type="button" id="unmuteBtn">Unmute</button>
+      </div>
+      <p class="home-video__caption">AI Brand Film // Jahn.</p>
+    </div>
     <div class="home-card-row">
       <a href="workflows.html" class="gradient-card card-workflows home-card">
         <div class="card-bg"></div>
         <div class="card-plus">+&nbsp;&nbsp;+&nbsp;&nbsp;+</div>
         <div class="card-content"><div class="card-title">Workflows</div><div class="card-desc">Browse our library of ready-to-use AI workflows.</div></div>
       </a>
+      <a href="gallery.html" class="gradient-card card-gallery home-card">
+        <div class="card-bg"></div>
+        <div class="card-plus">+&nbsp;&nbsp;+&nbsp;&nbsp;+</div>
+        <div class="card-content"><div class="card-title">Spotlight</div><div class="card-desc">A collection of beautiful AI generations.</div></div>
+      </a>
       <a href="request.html" class="gradient-card card-requests home-card">
         <div class="card-bg"></div>
         <div class="card-plus">+&nbsp;&nbsp;+&nbsp;&nbsp;+</div>
-        <div class="card-content"><div class="card-title">Requests</div><div class="card-desc">Need something from Lucid? Submit a request.</div></div>
+        <div class="card-content"><div class="card-title">Request Lucid</div><div class="card-desc">Need something from Lucid? Submit a request.</div></div>
       </a>
       <a href="faqs.html" class="gradient-card card-faqs home-card">
         <div class="card-bg"></div>
         <div class="card-plus">+&nbsp;&nbsp;+&nbsp;&nbsp;+</div>
         <div class="card-content"><div class="card-title">FAQs</div><div class="card-desc">Answers to the most common AI questions.</div></div>
-      </a>
-      <a href="gallery.html" class="gradient-card card-gallery home-card">
-        <div class="card-bg"></div>
-        <div class="card-plus">+&nbsp;&nbsp;+&nbsp;&nbsp;+</div>
-        <div class="card-content"><div class="card-title">Spotlight</div><div class="card-desc">A collection of beautiful AI generations.</div></div>
       </a>
       <div class="home-our-goal">
         <h2 style="margin-bottom: 16px; color: var(--violet);">Our Goal</h2>
@@ -51,6 +58,24 @@
   </main>
   <footer class="site-footer"><span>Home</span><span>Lucid by Purplle, 2026</span></footer>
 </div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var brandFilmPlayer;
+  function onYouTubeIframeAPIReady() {
+    brandFilmPlayer = new YT.Player('brandFilm');
+  }
+  document.getElementById('unmuteBtn').addEventListener('click', function () {
+    if (!brandFilmPlayer || typeof brandFilmPlayer.isMuted !== 'function') return;
+    if (brandFilmPlayer.isMuted()) {
+      brandFilmPlayer.unMute();
+      this.textContent = 'Mute';
+    } else {
+      brandFilmPlayer.mute();
+      this.textContent = 'Unmute';
+    }
+  });
+</script>
 
 </body>
 </html>
