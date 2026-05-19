@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucid. — AI Workflows for Human Creators</title>
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -16,18 +16,26 @@
 <div class="aura aura-violet-3"></div>
 
 <div class="page-wrapper home-wrapper">
-  <header>
-    <div class="site-logo">Lucid<span>.</span></div>
-    <p class="home-tagline">AI Workflows for Human Creators</p>
-  </header>
-  <main style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-    <div class="home-video">
-      <div class="home-video__frame">
-        <iframe id="brandFilm" src="https://www.youtube-nocookie.com/embed/3bwmlnkkKqs?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0" title="AI Brand Film // Jahn." frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-        <button class="home-video__unmute" type="button" id="unmuteBtn">Unmute</button>
+  <main>
+    <section class="home-hero">
+      <header>
+        <div class="site-logo">Lucid<span>.</span></div>
+        <p class="home-tagline">AI Workflows for Human Creators</p>
+      </header>
+      <div class="home-video">
+        <div class="home-video__frame">
+          <iframe id="brandFilm" src="https://www.youtube-nocookie.com/embed/3bwmlnkkKqs?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0" title="AI Brand Film // Jahn." frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <button class="home-video__unmute" type="button" id="unmuteBtn">Unmute</button>
+        </div>
+        <p class="home-video__caption">AI Brand Film // Jahn.</p>
       </div>
-      <p class="home-video__caption">AI Brand Film // Jahn.</p>
-    </div>
+      <a class="home-scroll-cue" href="#explore" aria-label="Scroll to explore">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </section>
+    <section class="home-section" id="explore">
     <div class="home-card-row">
       <a href="workflows.html" class="gradient-card card-workflows home-card">
         <div class="card-bg"></div>
@@ -55,6 +63,7 @@
         <p style="font-size: 0.9rem; line-height: 1.8; color: #777777;">At any experience level, Lucid has something for you.</p>
       </div>
     </div>
+    </section>
   </main>
   <footer class="site-footer"><span>Home</span><span>Lucid by Purplle, 2026</span></footer>
 </div>

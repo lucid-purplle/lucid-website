@@ -260,14 +260,41 @@ a:hover { color: var(--red); }
 .howit-errors li strong { font-weight: 600; color: #555; }
 
 /* ---------- Homepage layout (index.html) ---------- */
-.home-wrapper { padding-left: 120px; padding-right: 120px; }
+.home-wrapper { padding-left: 120px; padding-right: 120px; padding-top: 0; padding-bottom: 0; }
 .home-card-row { display: flex; justify-content: center; align-items: flex-start; gap: 48px; }
 .home-card { width: 180px; }
 .home-our-goal { max-width: 280px; padding-top: 16px; text-align: left; }
 .home-tagline { font-size: 0.82rem; font-weight: 400; color: #777777; margin-top: 4px; letter-spacing: 0.03em; }
 
+/* Homepage hero section — fills the first screen on load */
+.home-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 56px;
+}
+.home-hero header { text-align: center; }
+.home-scroll-cue {
+  position: absolute; left: 50%; bottom: 32px;
+  display: flex; align-items: center; justify-content: center;
+  color: #999; transition: color 0.2s ease;
+  animation: scroll-cue-bob 2.4s ease-in-out infinite;
+}
+.home-scroll-cue:hover { color: var(--violet); }
+@keyframes scroll-cue-bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-scroll-cue { animation: none; transform: translateX(-50%); }
+}
+
+/* Homepage second section — cards + Our Goal, below the fold */
+.home-section { padding-top: 120px; padding-bottom: 96px; }
+
 /* Homepage brand-film hero — contained 16:9 YouTube embed + custom unmute */
-.home-video { width: 100%; max-width: 900px; margin: 0 auto 56px; }
+.home-video { width: 100%; max-width: 900px; margin: 0 auto; }
 .home-video__frame {
   position: relative; width: 100%; aspect-ratio: 16 / 9;
   border-radius: 14px; overflow: hidden;
@@ -298,8 +325,9 @@ a:hover { color: var(--red); }
   .home-card-row { flex-direction: column; align-items: stretch; gap: 32px; }
   .home-card { width: 100%; aspect-ratio: auto; height: 110px; }
   .home-our-goal { order: -1; max-width: 100%; padding-top: 0; }
-  .home-tagline { font-size: 0.72rem; margin-bottom: 32px; }
-  .home-video { margin-bottom: 40px; }
+  .home-tagline { font-size: 0.72rem; }
+  .home-hero { gap: 36px; }
+  .home-section { padding-top: 72px; padding-bottom: 64px; }
 }
 
 /* Side-by-side image compare (used on NBP Whisperer) — stays flex row at all widths */
