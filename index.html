@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucid. — AI Workflows for Human Creators</title>
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -24,8 +24,21 @@
       </header>
       <div class="home-video">
         <div class="home-video__frame">
-          <iframe id="brandFilm" src="https://www.youtube-nocookie.com/embed/3bwmlnkkKqs?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0" title="AI Brand Film // Jahn." frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          <button class="home-video__unmute" type="button" id="unmuteBtn">Unmute</button>
+          <video id="brandFilm" class="home-video__el" src="assets/trailer/krystal-bloom-teaser.mp4" autoplay muted playsinline preload="auto"></video>
+          <div class="home-video__controls">
+            <button class="home-video__btn" id="vidPlay" type="button" aria-label="Play or pause">
+              <svg class="home-video__ic home-video__ic--play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+              <svg class="home-video__ic home-video__ic--pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+            </button>
+            <input class="home-video__scrub" id="vidScrub" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+            <button class="home-video__btn" id="vidMute" type="button" aria-label="Mute or unmute">
+              <svg class="home-video__ic home-video__ic--unmuted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"></path><path d="M16.4 8.6a5 5 0 0 1 0 6.8M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+              <svg class="home-video__ic home-video__ic--muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"></path><path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+            </button>
+            <button class="home-video__btn" id="vidFull" type="button" aria-label="Fullscreen">
+              <svg class="home-video__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg>
+            </button>
+          </div>
         </div>
         <p class="home-video__caption">AI Brand Film // Jahn.</p>
       </div>
@@ -68,22 +81,54 @@
   <footer class="site-footer"><span>Home</span><span>Lucid by Purplle, 2026</span></footer>
 </div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  var brandFilmPlayer;
-  function onYouTubeIframeAPIReady() {
-    brandFilmPlayer = new YT.Player('brandFilm');
-  }
-  document.getElementById('unmuteBtn').addEventListener('click', function () {
-    if (!brandFilmPlayer || typeof brandFilmPlayer.isMuted !== 'function') return;
-    if (brandFilmPlayer.isMuted()) {
-      brandFilmPlayer.unMute();
-      this.textContent = 'Mute';
-    } else {
-      brandFilmPlayer.mute();
-      this.textContent = 'Unmute';
+  (function () {
+    var v = document.getElementById('brandFilm');
+    var frame = v.parentElement;
+    var playBtn = document.getElementById('vidPlay');
+    var muteBtn = document.getElementById('vidMute');
+    var fullBtn = document.getElementById('vidFull');
+    var scrub = document.getElementById('vidScrub');
+
+    function syncProgress() {
+      var pct = v.duration ? (v.currentTime / v.duration) * 100 : 0;
+      scrub.value = pct;
+      scrub.style.setProperty('--p', pct + '%');
     }
-  });
+
+    playBtn.addEventListener('click', function () {
+      if (v.paused) { v.play(); } else { v.pause(); }
+    });
+    v.addEventListener('play', function () { playBtn.classList.add('is-playing'); });
+    v.addEventListener('pause', function () { playBtn.classList.remove('is-playing'); });
+    v.addEventListener('ended', function () { playBtn.classList.remove('is-playing'); });
+
+    v.addEventListener('timeupdate', syncProgress);
+    v.addEventListener('loadedmetadata', syncProgress);
+    scrub.addEventListener('input', function () {
+      if (v.duration) { v.currentTime = (scrub.value / 100) * v.duration; }
+      scrub.style.setProperty('--p', scrub.value + '%');
+    });
+
+    muteBtn.addEventListener('click', function () {
+      v.muted = !v.muted;
+      muteBtn.classList.toggle('is-muted', v.muted);
+    });
+
+    fullBtn.addEventListener('click', function () {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else if (frame.requestFullscreen) {
+        frame.requestFullscreen();
+      } else if (v.webkitEnterFullscreen) {
+        v.webkitEnterFullscreen();
+      }
+    });
+
+    // Reflect initial autoplay-muted state on the controls.
+    muteBtn.classList.toggle('is-muted', v.muted);
+    if (!v.paused) { playBtn.classList.add('is-playing'); }
+  })();
 </script>
 
 </body>
