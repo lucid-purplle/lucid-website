@@ -12,7 +12,7 @@
   --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 16px; scroll-behavior: smooth; scroll-snap-type: y proximity; }
 
 body {
   background-color: var(--bg);
@@ -269,10 +269,11 @@ a:hover { color: var(--red); }
 /* Homepage hero section — fills the first screen on load */
 .home-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 56px;
+  scroll-snap-align: start;
 }
 .home-hero header { text-align: center; }
 .home-scroll-cue {
@@ -290,8 +291,13 @@ a:hover { color: var(--red); }
   .home-scroll-cue { animation: none; transform: translateX(-50%); }
 }
 
-/* Homepage second section — cards + Our Goal, below the fold */
-.home-section { padding-top: 120px; padding-bottom: 96px; }
+/* Homepage second section — cards + Our Goal, a full-height snap screen */
+.home-section {
+  min-height: 100dvh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 64px 0;
+  scroll-snap-align: start;
+}
 
 /* Homepage brand-film hero — contained 16:9 YouTube embed + custom unmute */
 .home-video { width: 100%; max-width: 900px; margin: 0 auto; }
@@ -327,7 +333,7 @@ a:hover { color: var(--red); }
   .home-our-goal { order: -1; max-width: 100%; padding-top: 0; }
   .home-tagline { font-size: 0.72rem; }
   .home-hero { gap: 36px; }
-  .home-section { padding-top: 72px; padding-bottom: 64px; }
+  .home-section { padding: 48px 0; }
 }
 
 /* Side-by-side image compare (used on NBP Whisperer) — stays flex row at all widths */
