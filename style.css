@@ -704,11 +704,11 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
    each card links to that step's own detail page. */
 .step-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 16px; margin-top: 8px;
+  gap: 16px; margin-top: 48px;
 }
 .step-card {
   display: flex; flex-direction: column;
-  aspect-ratio: 5 / 4; padding: 20px;
+  padding: 20px;
   border: 1px solid rgba(191, 191, 191, 0.5);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.55);
@@ -754,5 +754,4 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
 }
 @media (max-width: 600px) {
   .step-grid { grid-template-columns: 1fr; }
-  .step-card { aspect-ratio: auto; }
 }
