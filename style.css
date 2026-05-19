@@ -500,10 +500,23 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
 .gallery-detail-page { max-width: 1180px; }
 .gallery-back-link { max-width: 1180px; }
 
-/* Masonry wall — JS distributes each entry into the shortest column.
-   Columns are equal-width flex children; thumbnails keep natural aspect. */
-.gallery-list { display: flex; align-items: flex-start; gap: 16px; margin-top: 8px; }
-.gallery-col { display: flex; flex-direction: column; gap: 16px; flex: 1 1 0; min-width: 0; }
+/* Aspect-ratio groups — three stacked CSS grids (Square / Wide / Ultra-wide).
+   Grouping like-with-like de-clutters the wall; images keep their true
+   aspect ratio (uncropped), so row heights vary slightly within a group. */
+.gallery-groups { margin-top: 8px; }
+.gallery-group { display: grid; gap: 16px; margin-bottom: 28px; }
+.gallery-group:last-child { margin-bottom: 0; }
+.gallery-group--square { grid-template-columns: repeat(4, 1fr); }
+.gallery-group--wide { grid-template-columns: repeat(2, 1fr); }
+.gallery-group--ultra { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 820px) {
+  .gallery-group--square { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .gallery-group--square { grid-template-columns: repeat(2, 1fr); }
+  .gallery-group--wide { grid-template-columns: 1fr; }
+  .gallery-group--ultra { grid-template-columns: 1fr; }
+}
 
 /* Filter bar — shared restrained dropdown (gallery brand filter,
    workflows New/Legacy filter). Sits between a page's intro and its grid. */
