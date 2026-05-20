@@ -28,9 +28,9 @@
   <div class="workflow-detail-page">
     <h1>Request Lucid</h1>
     <p class="wf-lead">Need a new workflow, a demo, or help with an AI tool? Tell us what you need.</p>
-    <form id="request-form" onsubmit="handleSubmit(event)">
+    <form id="request-form">
       <div class="form-group"><label for="name">Full name</label><input type="text" id="name" name="name" placeholder="First and last name" required></div>
-      <div class="form-group"><label for="team">Team</label><input type="text" id="team" name="team" placeholder="e.g. Marketing, Category, Tech"></div>
+      <div class="form-group"><label for="team">Team</label><input type="text" id="team" name="team" placeholder="e.g. Marketing, Category, Tech" required></div>
       <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@purplle.com" required></div>
       <div class="form-group"><label for="request-type">Nature of request</label>
         <select id="request-type" name="request-type" required>
@@ -41,10 +41,10 @@
         </select>
       </div>
       <div class="form-group"><label for="description">Describe your request</label>
-        <textarea id="description" name="description" placeholder="What problem are you trying to solve? What does the ideal outcome look like?"></textarea>
+        <textarea id="description" name="description" placeholder="What problem are you trying to solve? What does the ideal outcome look like?" required></textarea>
       </div>
       <div class="form-group"><label for="urgency">Request urgency</label>
-        <select id="urgency" name="urgency">
+        <select id="urgency" name="urgency" required>
           <option value="" disabled selected>How soon do you need this?</option>
           <option value="next-week">Next week</option>
           <option value="next-month">Next month</option>
@@ -57,16 +57,61 @@
       <h3 style="color: var(--violet); margin-bottom: 8px;">Request received.</h3>
       <p style="font-size: 0.9rem; color: #777777;">We'll review this and get back to you. Thanks for reaching out to Lucid.</p>
     </div>
+    <div id="error-message" style="display: none; margin-top: 16px;">
+      <p style="font-size: 0.9rem; color: var(--red);">Something went wrong — please try again, or email <a href="mailto:mohana.p@purplle.com" style="color: var(--red); text-decoration: underline;">mohana.p@purplle.com</a>.</p>
+    </div>
   </div>
   <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
 </div>
 
 <script>
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('request-form').style.display = 'none';
-  document.getElementById('success-message').style.display = 'block';
-}
+(function () {
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzZ9zxgNQ3MBRt1OyNc6iyjSq8NNN7IJx5eFam7IwUaBzphQxP1Zb-cyjWP3yEeXmPagw/exec';
+  var form = document.getElementById('request-form');
+  var btn = form.querySelector('button[type="submit"]');
+  var success = document.getElementById('success-message');
+  var error = document.getElementById('error-message');
+  var origBtnText = btn.textContent;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    error.style.display = 'none';
+
+    var payload = {
+      'name': form.name.value,
+      'team': form.team.value,
+      'email': form.email.value,
+      'request-type': form['request-type'].value,
+      'description': form.description.value,
+      'urgency': form.urgency.value
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      // text/plain keeps this a "simple" CORS request — no preflight.
+      // Apps Script doPost(e) reads e.postData.contents and JSON.parses it.
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.ok === true) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          throw new Error('endpoint returned ok:false');
+        }
+      })
+      .catch(function () {
+        error.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = origBtnText;
+      });
+  });
+})();
 </script>
 
 </body>
