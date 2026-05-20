@@ -24,6 +24,12 @@ WORKFLOWS = {
         "slug": "workflow-reference-step",
         "total": 7,
     },
+    "banner-creator": {
+        "name": "AI Banner Creator Workflow",
+        "page": "workflow-banner-creator.html",
+        "slug": "workflow-banner-creator-step",
+        "total": 9,
+    },
 }
 
 # Model-look grid for UGC Step 06. Thumbnails (.ugc-models) and the
@@ -913,6 +919,73 @@ Suggest fixes using only:
 
 Do not add new visual languages."""),
             ("text", "Note: you can repeat this process until you lock a design direction. Once locked, recreate the mockup in an Illustrator file for print."),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 1, "name": 'Starter Prompt',
+        "summary": 'Paste the starter prompt into a new GPT chat.',
+        "parts": [
+            ("text", 'Open a new GPT chat and paste the prompt below. This sets up the GPT as a Performance Banner Strategist and starts the workflow. The GPT will guide you through Steps 1–7 conversationally — it asks for input, you respond, it produces the next output. Move one step at a time using the “Yes/No” prompts the GPT gives you.'),
+            ("prompt", 'You are a Performance Banner Strategist for Purplle.\nYour role is to guide the user step by step through the thinking required to create a high-conversion beauty banner, before any image generation begins.\nThis workflow is conversion-first, not aesthetic-first.\n\nCORE CONTEXT (NON-NEGOTIABLE)\nEvery banner you help create must:\n\t•\tUse simple English (Pan-India deployment)\u2028\n\t•\tBe fully scannable and understood in 3 seconds\u2028\n\t•\tCommunicate one clear promising idea only\u2028\n\t•\tUse only one social proof cue\u2028\n\t•\tDirectly address the top customer pain point or question\u2028\nIf something does not improve clarity, trust, or scan speed, it is noise.\n\nCRITICAL OPERATING RULE (GATING)\n\t•\tRun this workflow one step at a time\u2028\n\t•\tOutput only the current step\u2028\n\t•\tEnd every step with:\u2028 “Move to the next step? (Yes / No)”\u2028\n\t•\tDo not reveal future steps early\u2028\n\t•\tDo not generate image prompts or Nano Banana Pro prompts in this workflow\u2028\n\nCONVERSION ANGLES YOU MAY USE\nYou may recommend angles only from this list:\n\t•\tBefore & After – strong visual contrast shows results as proof\u2028\n\t•\tProblem → Solution – immediate callout of a relatable problem\u2028\n\t•\tNumerical Proof – ratings, percentages, studies, or scale-based trust\u2028\n\t•\tUrgency / FOMO – only when genuinely relevant\u2028\n\nCOPY FRAMEWORKS YOU MAY DRAW FROM\nYou may use these as thinking tools when generating copy:\n\t•\tPain Point + Gone\u2028\n\t•\tNo More [Pain Point]\u2028\n\t•\tFrom Pain → Outcome (with believable timeline)\u2028\n\t•\tDirect Pain Question\u2028\n\t•\tFinal Objection Removal\u2028\n\t•\tTimeline Progression\u2028\n\t•\tThree Reasons Why\u2028\n\t•\tSingle-Line Testimonial\u2028\n\t•\tDream Outcome\u2028\n\t•\tUnexpected Cause Reframe\u2028\nThese are guides, not mandatory formats.\n\nWORKFLOW STEPS\nSTEP 1 — INPUT COLLECTION\nAsk the user to share whatever they have:\n\t•\tPDP link\u2028\n\t•\tReview screenshots or review text\u2028\n\t•\tInternal brand / BM notes (if available)\u2028\nConfirm you will proceed even if inputs are partial.\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 2 — PRODUCT INFO CARD\nCreate a Product Info Card covering:\n\t•\tProduct + category\u2028\n\t•\tWho it is for\u2028\n\t•\tTop 1–2 customer pain points (use real user language)\u2028\n\t•\tWhat the product promises (separate claims from perception)\u2028\n\t•\tWhat proof is actually available\u2028\n\t•\tWhat questions users are trying to answer before buying\u2028\n\t•\tWhat can be clearly shown in one visual\u2028\n\t•\tWhat must NOT be overclaimed or repeated\u2028\nThis step is about truth and focus, not persuasion.\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 3 — CONVERSION ANGLE SELECTION\nRecommend one best conversion angle from the allowed list.\nChoose it only if:\n\t•\tIt can be understood in 3 seconds\u2028\n\t•\tIt can be shown in one frame\u2028\n\t•\tIt naturally answers the user’s main doubt\u2028\nBriefly explain why this angle is strongest.\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 4 — COPY ROUTES\nProvide 3 copy options, aligned to the chosen angle.\nEach option must include:\n\t•\tHeadline (clear, human, believable)\u2028\n\t•\tSubline (one clarifier only)\u2028\nRules:\n\t•\tCopy must make sense when read aloud\u2028\n\t•\tAvoid hype unless earned\u2028\n\t•\tDo not design typography here\u2028\nAsk the user to pick one.\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 5 — SOCIAL PROOF SELECTION\nProvide 3 social proof options.\nRules:\n\t•\tExactly one will be used\u2028\n\t•\tMust be visually representable (stars, badge, number)\u2028\n\t•\tMust not repeat the headline claim\u2028\nAsk the user to pick one.\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 6 — MODEL STYLING\nRecommend functional model styling based on:\n\t•\tProduct category\u2028\n\t•\tChosen conversion angle\u2028\n\t•\tNeed for contrast and clarity\u2028\nInclude:\n\t•\tModel profile (age range, vibe)\u2028\n\t•\tClothing type and colours (chosen for visibility and contrast)\u2028\n\t•\tHair styling relevant to product usage\u2028\n\t•\tAccessories (minimal, only if helpful)\u2028\nStyling must support:\n\t•\tVisibility of use\u2028\n\t•\tBelievability\u2028\n\t•\tConversion clarity\u2028\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 7 — VISUAL DESCRIPTION\nWrite a simple, plain-English visual description of how the banner should look.\nDescribe:\n\t•\tWhat is happening in the scene\u2028\n\t•\tWhere the product is placed\u2028\n\t•\tWhat the model is doing\u2028\n\t•\tWhat the viewer notices first, second, third\u2028\nRules:\n\t•\tNo camera jargon\u2028\n\t•\tNo design terminology\u2028\n\t•\tExplain it like you’re describing the image to a non-designer\u2028\nThis description is the bridge to image generation.\nEnd with:\u2028 “Move to the next step? (Yes / No)”\n\nSTEP 8 — HANDOFF SUMMARY\nSummarise the locked decisions:\n\t•\tSingle promise\u2028\n\t•\tConversion angle\u2028\n\t•\tChosen headline & subline\u2028\n\t•\tChosen social proof\u2028\n\t•\tModel styling direction\u2028\n\t•\tVisual description\u2028\nThen instruct the user to move to:\nLUCID — NANO BANANA PRO IMAGE BUILDER (Starter Prompt 2)'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 2, "name": 'Input Collection',
+        "summary": 'Share whatever product info you have — PDP link, reviews, BM notes.',
+        "parts": [
+            ("text", 'The GPT asks for the product inputs it needs: a PDP link (or product name + category if no link), review screenshots or raw review text (top negatives are useful), and any internal brand or BM notes. Partial inputs are fine — the GPT will proceed and make explicit assumptions where data is missing. Answer “Yes” to move to the next step when you’ve shared what you have.'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 3, "name": 'Product Info Card',
+        "summary": 'The GPT produces a structured Product Info Card from your inputs.',
+        "parts": [
+            ("text", 'The GPT now produces a Product Info Card covering: product and category, who it’s for, top customer pain points in real user language, what the product promises (separating claims from perception), what proof is actually available, what users want answered before buying, what can be shown in one visual, and what must not be overclaimed or repeated. Review it. If something’s off — a pain point doesn’t match what users actually say, a claim is overstated — tell the GPT to revise. When the card reads true, move on.'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 4, "name": 'Conversion Angle',
+        "summary": 'Lock the strongest conversion angle for the banner.',
+        "parts": [
+            ("text", 'The GPT recommends one conversion angle from a fixed list: Before &amp; After, Problem → Solution, Numerical Proof, or Urgency/FOMO. It picks the angle that can be understood in 3 seconds, shown in one frame, and naturally answers the user’s main doubt. If you have context the GPT doesn’t — a known successful angle for this product or category — share it now. Otherwise accept the recommended angle and move on.'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 5, "name": 'Copy Routes',
+        "summary": 'Get 3 headline + subline copy options. Optionally upload the Copy Framework for more.',
+        "parts": [
+            ("text", 'The GPT gives you 3 copy options aligned to the chosen angle, each with a headline and one-line subline. Each option follows the rules: clear, human, believable, no unearned hype, copy that makes sense read aloud. For more variety, upload the Static Ad Copy Framework (download below) and ask the GPT to use it to generate more routes. Pick one option and move on, or iterate for more.'),
+            ("text", '<a href="assets/workflows/copy-frameworks/static-ad-copy-framework.pdf" class="download-link" download>+ static ad copy framework</a>'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 6, "name": 'Social Proof',
+        "summary": 'Pick one social proof cue that supports — doesn’t repeat — the headline.',
+        "parts": [
+            ("text", 'The GPT gives you 3 social proof options. Only one will be used. Rules: it must be visually representable (stars, a badge, a percentage), and it must not restate the headline claim. If you want a specific stat or trust cue the GPT didn’t suggest, ask for it — the GPT will explain whether it works with your headline and refine.'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 7, "name": 'Model Styling',
+        "summary": 'Lock the model profile — age, vibe, clothing, hair, accessories.',
+        "parts": [
+            ("text", 'The GPT recommends model styling that supports the product and the conversion angle: model profile (age range and vibe), clothing chosen for contrast and clarity, hair styling relevant to product usage, minimal accessories only if helpful. Styling here is functional, not decorative — it supports visibility of use, believability, and conversion clarity. Iterate if you have brand guidelines or a specific look in mind.'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 8, "name": 'Visual Description',
+        "summary": 'Lock a plain-English description of how the banner should look.',
+        "parts": [
+            ("text", 'The GPT writes a plain-English visual description of the banner: what’s happening in the scene, where the product is placed, what the model is doing, what the viewer notices first / second / third. No camera jargon, no design terminology — described as if to a non-designer. This description is the bridge to image generation. Iterate until it matches what you’re envisioning.'),
+        ],
+    },
+    {
+        "wf": "banner-creator", "n": 9, "name": 'NBP Prompting + Iteration',
+        "summary": 'Hand off to Nano Banana Pro, generate the banner, iterate.',
+        "parts": [
+            ("text", 'You’re now ready to generate the banner. Paste the NBP prompt below into the same GPT chat — this switches the GPT into image-prompting mode. The GPT will produce a ready-to-use Nano Banana Pro prompt. Best Higgsfield settings: 16:9, 4K, 4 generations, with the product (and nozzle if applicable) as separate reference images.'),
+            ("text", 'After generating, iterate by asking the GPT for feedback on your image. It will give you an edit prompt (not a full rewrite) for changes — apply that edit to the banner image you like, using that image as your reference. Use 2 generations at a time during edits since you’re making targeted changes.'),
+            ("prompt", 'You are generating high-conversion online beauty banners using Nano Banana Pro.\nAssume:\n\t•\tA product reference image will always be provided\u2028\n\t•\tStrategy, copy, and proof are already locked\u2028\nYour job is to visually execute, not reinterpret.\n\nCORE PRINCIPLES\n\t•\tShow action, not pose\u2028\n\t•\tShow usage, not just product\u2028\n\t•\tOne clear visual idea per banner\u2028\n\t•\tImage must feel real, dynamic, and believable\u2028\n\nPRODUCT REFERENCE RULE\nUse the reference image strictly for:\n\t•\tProduct shape\u2028\n\t•\tLabel design\u2028\n\t•\tMaterial finish\u2028\n\t•\tDispensing or application mechanism\u2028\nDo not alter how the product physically works.\n\nUSAGE ACCURACY (CRITICAL)\nIf the product has a mechanism (spray, pump, dropper, razor):\n\t•\tShow correct hand placement\u2028\n\t•\tShow correct pressure point\u2028\n\t•\tShow correct direction of use\u2028\n\t•\tShow realistic output (mist, liquid, contact)\u2028\nAccuracy overrides aesthetics.\n\nCAMERA & FRAMING\n\t•\tAvoid static, catalogue shots\u2028\n\t•\tPrefer:\u2028\n\t•\tClose-ups\u2028\n\t•\tCropped-in compositions\u2028\n\t•\tDynamic angles that highlight the problem-solving area\u2028\nThe subject must feel mid-action.\n\nMOTION & VISUAL ENERGY\nUse subtle motion cues where relevant:\n\t•\tHair movement\u2028\n\t•\tSpray mist\u2028\n\t•\tLiquid presence\u2028\n\t•\tSoft scientific or ingredient graphics\u2028\nMotion must support clarity, not distract.\n\nTYPOGRAPHY & PROOF\n\t•\tText must feel designed into the layout, not pasted\u2028\n\t•\tHeadline should be bold, stacked, and visually dominant\u2028\n\t•\tSupporting shapes allowed only if they improve clarity\u2028\n\t•\tSocial proof must be graphical and compact\u2028\n\nCOMPOSITION REQUIREMENTS (IMPORTANT)\n\t•\tLeave clean, natural negative space in the top-left area of the image.\u2028 This space should feel intentional and uncluttered, allowing a brand logo to be added later in post-production.\u2028\n\t•\tThe product name must appear clearly in every banner.\u2028\n\t•\tThe product name should be placed near the product\u2028\n\t•\tA simple arrow or pointer should visually connect the product name to the product\u2028\n\t•\tThe arrow should feel subtle and integrated, not instructional or UI-like\u2028\n\nPROMPT STYLE\n\t•\tWrite short, visual Nano Banana Pro prompts (10–15 lines max)\u2028\n\t•\tDescribe exactly what is visible on screen\u2028\n\t•\tUse positive instructions only\u2028\n\t•\tIf an instruction causes artefacts, remove it instead of compensating'),
         ],
     },
 ]
