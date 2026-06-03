@@ -69,15 +69,15 @@ a:hover { color: var(--red); }
 .site-logo { font-size: 1.75rem; font-weight: 500; color: var(--text); letter-spacing: 0.02em; }
 .site-logo span { color: var(--violet); }
 .nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-transform: lowercase; letter-spacing: 0.05em; transition: color 0.2s ease; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: #555; text-transform: lowercase; letter-spacing: 0.05em; transition: color 0.2s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
-.site-footer { margin-top: auto; padding-top: 64px; display: flex; justify-content: space-between; align-items: baseline; font-size: 0.75rem; font-weight: 400; color: var(--muted); }
+.site-footer { margin-top: auto; padding-top: 64px; display: flex; justify-content: space-between; align-items: baseline; font-size: 0.75rem; font-weight: 400; color: #555; }
 .footer-plus { letter-spacing: 0.3em; color: var(--muted); font-size: 0.7rem; }
 
 .page-header { margin-bottom: 56px; }
 .page-header h1 { margin-bottom: 8px; }
-.page-header .tagline { font-size: 0.95rem; font-weight: 400; color: #777777; }
+.page-header .tagline { font-size: 0.95rem; font-weight: 400; color: #555; }
 
 .gradient-card {
   position: relative; border-radius: 24px; overflow: hidden;
@@ -135,12 +135,12 @@ a:hover { color: var(--red); }
 
 .faq-item { padding: 20px 0; border-bottom: 1px solid rgba(191,191,191,0.3); }
 .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 16px; }
-.faq-question h3 { font-size: 1.05rem; font-weight: 500; color: #777777; }
+.faq-question h3 { font-size: 1.05rem; font-weight: 500; color: #555; }
 .faq-toggle { font-size: 1.2rem; color: var(--red); transition: transform 0.3s ease; flex-shrink: 0; user-select: none; }
 .faq-toggle.open { transform: rotate(45deg); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
 .faq-answer.open { max-height: 1200px; padding-top: 16px; }
-.faq-answer p { font-size: 0.9rem; color: #777777; line-height: 1.8; margin-bottom: 12px; }
+.faq-answer p { font-size: 0.9rem; color: #555; line-height: 1.8; margin-bottom: 12px; }
 
 /* Auto-fill so the grid fills as many cards per row as comfortably fit
    (~4 on a wide desktop, fewer as it narrows, 1 on mobile). auto-fill —
@@ -187,13 +187,13 @@ a:hover { color: var(--red); }
 .workflow-card .wf-category { font-size: 0.68rem; font-weight: 500; color: var(--violet); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
 .workflow-card .wf-title { font-size: 1.02rem; font-weight: 500; color: #222; margin-bottom: 10px; line-height: 1.3; }
 .workflow-card .wf-desc {
-  font-size: 0.74rem; font-weight: 400; color: #777777; line-height: 1.65;
+  font-size: 0.74rem; font-weight: 400; color: #555; line-height: 1.65;
   text-wrap: pretty;
   max-height: 0; overflow: hidden; margin-bottom: 0;
   transition: max-height 0.35s ease, margin-bottom 0.35s ease;
 }
 .workflow-card .wf-desc.is-open { max-height: 600px; margin-bottom: 4px; }
-.workflow-card .wf-meta { display: block; font-size: 0.66rem; color: var(--muted); font-weight: 400; letter-spacing: 0.02em; }
+.workflow-card .wf-meta { display: block; font-size: 0.66rem; color: #555; font-weight: 400; letter-spacing: 0.02em; }
 
 .wf-toggle {
   display: flex; align-items: center; justify-content: space-between;
@@ -232,12 +232,12 @@ a:hover { color: var(--red); }
     radial-gradient(circle at 60% 10%, rgba(133, 120, 189, 0.35), transparent 55%);
   filter: blur(60px); opacity: 0.9; pointer-events: none;
 }
-.workflow-detail-page .wf-category { font-size: 0.72rem; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.workflow-detail-page .wf-category { font-size: 0.72rem; font-weight: 500; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
 .workflow-detail-page h1 { margin-bottom: 12px; }
-.workflow-detail-page .wf-lead { font-size: 1rem; color: #777777; margin-bottom: 48px; max-width: 560px; }
+.workflow-detail-page .wf-lead { font-size: 1rem; color: #555; margin-bottom: 48px; max-width: 560px; }
 .workflow-detail-page h2 { font-size: 1.1rem; font-weight: 500; margin-top: 40px; margin-bottom: 16px; color: var(--violet); }
 .workflow-detail-page ol, .workflow-detail-page ul { padding-left: 20px; margin-bottom: 16px; }
-.workflow-detail-page li { font-size: 0.92rem; line-height: 1.8; margin-bottom: 6px; color: #777777; }
+.workflow-detail-page li { font-size: 0.92rem; line-height: 1.8; margin-bottom: 6px; color: #555; }
 .download-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 500; color: var(--red); margin-top: 8px; }
 .download-link:hover { color: var(--violet); }
 
@@ -252,7 +252,7 @@ a:hover { color: var(--red); }
 }
 
 /* ---------- "How it works" section (shared across workflow detail pages) ---------- */
-.how-it-works .howit-leadin { font-size: 0.95rem; color: #777777; margin-bottom: 24px; }
+.how-it-works .howit-leadin { font-size: 0.95rem; color: #555; margin-bottom: 24px; }
 .howit-screenshot { margin: 0 0 28px; }
 .howit-screenshot__trigger {
   display: block; width: 100%; padding: 0; margin: 0;
@@ -265,7 +265,7 @@ a:hover { color: var(--red); }
 .howit-screenshot__trigger:hover { box-shadow: 0 10px 32px rgba(133, 120, 189, 0.18); transform: translateY(-2px); }
 .howit-screenshot__trigger:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
 .howit-screenshot__trigger img { display: block; width: 100%; height: auto; }
-.how-it-works__caption { margin-top: 10px; font-size: 0.8rem; font-style: italic; color: #777777; }
+.how-it-works__caption { margin-top: 10px; font-size: 0.8rem; font-style: italic; color: #555; }
 .howit-errors li strong { font-weight: 600; color: #555; }
 
 /* ---------- Homepage layout (index.html) ---------- */
@@ -273,7 +273,7 @@ a:hover { color: var(--red); }
 .home-card-row { display: flex; justify-content: center; align-items: flex-start; gap: 48px; }
 .home-card { width: 180px; }
 .home-our-goal { max-width: 280px; padding-top: 16px; text-align: left; }
-.home-tagline { font-size: 0.82rem; font-weight: 400; color: #777777; margin-top: 4px; letter-spacing: 0.03em; }
+.home-tagline { font-size: 0.82rem; font-weight: 400; color: #555; margin-top: 4px; letter-spacing: 0.03em; }
 
 /* Homepage hero section — fills the first screen on load */
 .home-hero {
@@ -369,7 +369,7 @@ a:hover { color: var(--red); }
 
 .home-video__caption {
   margin-top: 10px; text-align: center;
-  font-size: 0.78rem; color: #777777; letter-spacing: 0.03em;
+  font-size: 0.78rem; color: #555; letter-spacing: 0.03em;
 }
 
 @media (max-width: 600px) {
@@ -420,7 +420,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
   margin-bottom: 4px;
 }
 .howit-caption-text {
-  /* inherits italic + 0.8rem + #777 from .how-it-works__caption on the figcaption */
+  /* inherits italic + 0.8rem + #555 from .how-it-works__caption on the figcaption */
 }
 
 /* ---------- Muse Models gallery (workflow-muse-models.html) ---------- */
@@ -455,7 +455,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
   transition: max-height 0.35s ease, padding-top 0.35s ease;
 }
 .muse-brand-body.is-collapsed { max-height: 0; padding-top: 0; }
-.muse-brand-leadin { font-size: 0.9rem; color: #777777; margin-bottom: 24px; }
+.muse-brand-leadin { font-size: 0.9rem; color: #555; margin-bottom: 24px; }
 .muse-models-list { display: flex; flex-direction: column; gap: 32px; }
 .muse-model-card { /* container only; no chrome by default */ }
 .muse-model-name { font-size: 1rem; font-weight: 500; color: #222; margin-bottom: 12px; letter-spacing: 0.01em; }
@@ -641,7 +641,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
 .tov-block__head h3 {
   font-family: var(--font); font-size: 1rem; font-weight: 500; color: #222;
 }
-.tov-block__desc { font-size: 0.85rem; font-style: italic; color: #777777; margin-bottom: 12px; }
+.tov-block__desc { font-size: 0.85rem; font-style: italic; color: #555; margin-bottom: 12px; }
 .tov-prompt {
   /* white-space: pre-wrap keeps the prompt's literal line breaks while
      still wrapping long lines; the text copies out with formatting intact. */
@@ -654,7 +654,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
   padding: 16px 18px; margin: 0;
   overflow-x: auto;
 }
-.tov-footnote { margin-top: 40px; font-size: 0.85rem; color: #777777; }
+.tov-footnote { margin-top: 40px; font-size: 0.85rem; color: #555; }
 
 /* ---------- Accordion (shared — assets/accordion.js) ---------- */
 /* Unused after workflow pages converted to step grids — safe to remove.
@@ -672,7 +672,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
 .accordion__header:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
 .accordion__label { flex: 1; min-width: 0; }
 .accordion__step { font-family: var(--font); font-weight: 500; font-size: 0.95rem; color: #222; }
-.accordion__summary { font-size: 0.85rem; color: #777777; }
+.accordion__summary { font-size: 0.85rem; color: #555; }
 .accordion__plus {
   flex-shrink: 0; font-family: var(--font); font-weight: 500;
   font-size: 1.4rem; line-height: 1; color: var(--red);
@@ -684,7 +684,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
   transition: max-height 0.4s ease, padding-top 0.4s ease;
 }
 .accordion__body.is-collapsed { max-height: 0; padding-top: 0; }
-.accordion__note { font-size: 0.9rem; line-height: 1.7; color: #777777; margin: 0 0 14px; }
+.accordion__note { font-size: 0.9rem; line-height: 1.7; color: #555; margin: 0 0 14px; }
 .accordion__body .gallery-copy { margin-top: 14px; }
 .accordion__note--trailing { margin: 16px 0 0; }
 
@@ -725,7 +725,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
 }
 
 /* Short labelled note line (workflow detail pages) */
-.wf-note { font-size: 0.92rem; line-height: 1.7; color: #777777; margin: 0 0 10px; }
+.wf-note { font-size: 0.92rem; line-height: 1.7; color: #555; margin: 0 0 10px; }
 
 /* UGC Workflow — Step 06 model-look grid (workflow-ugc-video-creator.html).
    The trigger reuses .accordion__header so the shared accordion.js drives
@@ -795,7 +795,7 @@ body.workflows-open .workflow-detail-page ul { max-width: 720px; }
   color: #222; margin-top: 6px;
 }
 .step-card__summary {
-  font-size: 0.82rem; line-height: 1.6; color: #777777; margin-top: 8px;
+  font-size: 0.82rem; line-height: 1.6; color: #555; margin-top: 8px;
 }
 
 /* Step detail page body */
