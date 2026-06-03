@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alps Goodness PDP Imagery — Lucid.</title>
+<link rel="stylesheet" href="style.css?v=14">
+</head>
+<body class="workflows-page">
+
+<div class="film-grain"></div>
+<div class="aura aura-violet"></div>
+<div class="aura aura-red"></div>
+<div class="aura aura-violet-2"></div>
+<div class="aura aura-red-2"></div>
+<div class="aura aura-violet-3"></div>
+
+<div class="page-wrapper">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Lucid<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="workflows.html" class="active">workflows</a></li>
+      <li><a href="gallery.html">spotlight</a></li>
+      <li><a href="request.html">request lucid</a></li>
+      <li><a href="faqs.html">faqs</a></li>
+    </ul>
+  </nav>
+  <a href="workflows.html" class="back-link">+ back to workflows</a>
+  <div class="workflow-detail-page">
+    <div class="wf-category">Skill</div>
+    <h1>Alps Goodness PDP Imagery</h1>
+    <p class="wf-lead">A Claude skill that turns an Alps Goodness PDP content doc into per-slide image-generation prompts — hero, texture, ingredient, how-to-use, before/after, how-it-feels, rooted-in-ritual, pair-it-with, what's-inside, and the rest. Each prompt is built around an archetype, references real product and model images via placeholders, and leaves the deliberate negative-space zone clear for post-production text. It writes imagery only — it does not plan the PDP, write its copy, or do layout.</p>
+    <h2>How to use</h2>
+    <ol>
+      <li>Download the skill folder and add it to your Claude skills directory.</li>
+      <li>Open Claude and mention Alps Goodness, AG PDP, or any AG product — the skill triggers automatically. Upload the PDP content doc and the reference images you have ([MODEL] portrait, [HERO PRODUCT] packshot, plus [PAIR PRODUCT] or [KIT] packshots where relevant).</li>
+      <li>Claude reads the content doc slide by slide and classifies each into an archetype (Hero, Texture / In-Use, Ingredient Spotlight, How to Use, Before/After, How It Feels, Rooted in Ritual, Pair It With, What's Inside). Post-only slides (Reviews, Closing, pure stat) are flagged as no generation.</li>
+      <li>For each image-led slide, Claude returns the slide number + archetype, the references it expects, and the art-direction prompt — scene, props, palette move, light, composition, and the negative-space zone — written to hand off to the NBP Whisperer skill for final NBP / NB2 structuring.</li>
+      <li>If the deck has a non-standard slide (a ratio chart, a one-powder-many-rituals multi-use slide), the skill asks you how to execute it rather than guessing the layout.</li>
+      <li>Pair with the Alps Goodness Visual Universe (Soft Living) skill for palette / lighting / props, and with NBP Whisperer for the final prompt mechanics.</li>
+    </ol>
+    <h2>What you'll need</h2>
+    <ul>
+      <li>Claude access (Pro, Team, or Max)</li>
+      <li>The skill installed in your Claude skills directory</li>
+      <li>The PDP content doc and the relevant reference images for the product (model portrait, hero packshot, plus pair-product or kit packshots if those slides exist)</li>
+      <li>Higgsfield account with NBP / NB2 access for actually generating the images</li>
+      <li>Optionally pair with the Alps Goodness Visual Universe (Soft Living) and NBP Whisperer skills</li>
+    </ul>
+    <a href="assets/workflows/skills/ag-pdp-imagery.skill" class="download-link" download>+ alps goodness pdp imagery</a>
+  </div>
+  <footer class="site-footer"><span class="footer-plus">+&ensp;+&ensp;+</span><span>Lucid by Purplle, 2026</span></footer>
+</div>
+
+</body>
+</html>
