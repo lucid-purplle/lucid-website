@@ -43,17 +43,17 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .aura { position: fixed; border-radius: 50%; pointer-events: none; z-index: -1; }
-.aura-violet { width: 700px; height: 700px; top: -100px; right: -50px; background: radial-gradient(circle, rgba(133, 120, 189, 0.25) 0%, rgba(133, 120, 189, 0) 65%); filter: blur(80px); }
-.aura-red { width: 550px; height: 550px; top: 250px; right: 0px; background: radial-gradient(circle, rgba(234, 60, 50, 0.18) 0%, rgba(234, 60, 50, 0) 65%); filter: blur(90px); }
-.aura-violet-2 { width: 500px; height: 500px; top: 500px; left: -120px; background: radial-gradient(circle, rgba(133, 120, 189, 0.2) 0%, rgba(133, 120, 189, 0) 65%); filter: blur(80px); }
-.aura-red-2 { width: 450px; height: 450px; bottom: 50px; left: 20%; background: radial-gradient(circle, rgba(234, 60, 50, 0.14) 0%, rgba(234, 60, 50, 0) 65%); filter: blur(90px); }
-.aura-violet-3 { width: 600px; height: 600px; top: 60%; right: 15%; background: radial-gradient(circle, rgba(133, 120, 189, 0.18) 0%, rgba(133, 120, 189, 0) 65%); filter: blur(85px); }
+.aura-violet { width: 700px; height: 700px; top: -100px; right: -50px; background: radial-gradient(circle, rgba(133, 120, 189, 0.25) 0%, rgba(133, 120, 189, 0) 72%); }
+.aura-red { width: 550px; height: 550px; top: 250px; right: 0px; background: radial-gradient(circle, rgba(234, 60, 50, 0.18) 0%, rgba(234, 60, 50, 0) 72%); }
+.aura-violet-2 { width: 500px; height: 500px; top: 500px; left: -120px; background: radial-gradient(circle, rgba(133, 120, 189, 0.2) 0%, rgba(133, 120, 189, 0) 72%); }
+.aura-red-2 { width: 450px; height: 450px; bottom: 50px; left: 20%; background: radial-gradient(circle, rgba(234, 60, 50, 0.14) 0%, rgba(234, 60, 50, 0) 72%); }
+.aura-violet-3 { width: 600px; height: 600px; top: 60%; right: 15%; background: radial-gradient(circle, rgba(133, 120, 189, 0.18) 0%, rgba(133, 120, 189, 0) 72%); }
 
-body.workflows-page .aura-violet { background: radial-gradient(circle, rgba(133, 120, 189, 0.45) 0%, rgba(133, 120, 189, 0) 65%); }
-body.workflows-page .aura-red { background: radial-gradient(circle, rgba(234, 77, 61, 0.38) 0%, rgba(234, 77, 61, 0) 65%); }
-body.workflows-page .aura-violet-2 { background: radial-gradient(circle, rgba(133, 120, 189, 0.4) 0%, rgba(133, 120, 189, 0) 65%); }
-body.workflows-page .aura-red-2 { background: radial-gradient(circle, rgba(234, 77, 61, 0.32) 0%, rgba(234, 77, 61, 0) 65%); }
-body.workflows-page .aura-violet-3 { background: radial-gradient(circle, rgba(133, 120, 189, 0.36) 0%, rgba(133, 120, 189, 0) 65%); }
+body.workflows-page .aura-violet { background: radial-gradient(circle, rgba(133, 120, 189, 0.45) 0%, rgba(133, 120, 189, 0) 72%); }
+body.workflows-page .aura-red { background: radial-gradient(circle, rgba(234, 77, 61, 0.38) 0%, rgba(234, 77, 61, 0) 72%); }
+body.workflows-page .aura-violet-2 { background: radial-gradient(circle, rgba(133, 120, 189, 0.4) 0%, rgba(133, 120, 189, 0) 72%); }
+body.workflows-page .aura-red-2 { background: radial-gradient(circle, rgba(234, 77, 61, 0.32) 0%, rgba(234, 77, 61, 0) 72%); }
+body.workflows-page .aura-violet-3 { background: radial-gradient(circle, rgba(133, 120, 189, 0.36) 0%, rgba(133, 120, 189, 0) 72%); }
 
 h1, h2, h3, h4, nav a, .nav-link { font-weight: 500; letter-spacing: -0.01em; }
 h1 { font-size: 2.5rem; line-height: 1.2; }
@@ -134,8 +134,9 @@ a:hover { color: var(--red); }
 .form-group textarea { min-height: 120px; resize: vertical; }
 
 .faq-item { padding: 20px 0; border-bottom: 1px solid rgba(191,191,191,0.3); }
-.faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 16px; }
-.faq-question h3 { font-size: 1.05rem; font-weight: 500; color: #555; }
+.faq-question { margin: 0; }
+.faq-question button { display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 16px; width: 100%; background: none; border: 0; padding: 0; text-align: left; font-family: inherit; font-size: 1.05rem; font-weight: 500; color: #555; letter-spacing: -0.01em; }
+.faq-question button:focus-visible { outline: 2px solid var(--violet); outline-offset: 4px; border-radius: 4px; }
 .faq-toggle { font-size: 1.2rem; color: var(--red); transition: transform 0.3s ease; flex-shrink: 0; user-select: none; }
 .faq-toggle.open { transform: rotate(45deg); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }

@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI FAQs — Lucid.</title>
-<link rel="stylesheet" href="style.css?v=14">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="description" content="Straightforward answers to the AI questions we hear most at Purplle. No jargon, no fluff.">
+<meta property="og:title" content="AI FAQs — Lucid.">
+<meta property="og:description" content="Straightforward answers to the AI questions we hear most at Purplle. No jargon, no fluff.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lucid by Purplle">
+<link rel="stylesheet" href="style.css?v=15">
 </head>
 <body class="workflows-page">
 
@@ -30,19 +36,19 @@
     <p class="wf-lead">Straightforward answers to the questions we hear most. No jargon, no fluff.</p>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)"><h3>What is Lucid?</h3><span class="faq-toggle">+</span></div>
-        <div class="faq-answer"><p>Lucid is an internal AI systems designing team. We build structured creative workflows, that help you prompt, generate, plan, schedule &amp; manage better. Lucid uses existing AI tools to make creative work more efficient and consistent in quality.</p></div>
+        <h3 class="faq-question"><button type="button" aria-expanded="false" onclick="toggleFaq(this)">What is Lucid?<span class="faq-toggle" aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer"><p>Lucid is an internal AI systems designing team. We build structured creative workflows that help you prompt, generate, plan, schedule &amp; manage better. Lucid uses existing AI tools to make creative work more efficient and consistent in quality.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)"><h3>How can Lucid help with my creative work?</h3><span class="faq-toggle">+</span></div>
+        <h3 class="faq-question"><button type="button" aria-expanded="false" onclick="toggleFaq(this)">How can Lucid help with my creative work?<span class="faq-toggle" aria-hidden="true">+</span></button></h3>
         <div class="faq-answer"><p>Lucid takes the slow, repetitive parts of creative production and turns them into ready-to-use workflows, so you spend less time wrestling with tools and more time on the actual creative call. Instead of starting from scratch, you start from a structure that already works: a skill that writes your image prompts, a checker that catches artwork errors before print, a library of proven prompts, a set of approved model references. Whatever your experience level, the workflows meet you where you are. You don't need to be an AI expert to get a professional result.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)"><h3>Do you need tech knowledge to use AI?</h3><span class="faq-toggle">+</span></div>
+        <h3 class="faq-question"><button type="button" aria-expanded="false" onclick="toggleFaq(this)">Do you need tech knowledge to use AI?<span class="faq-toggle" aria-hidden="true">+</span></button></h3>
         <div class="faq-answer"><p>No. If you can write a clear brief and give feedback, you can use these tools. The workflows Lucid builds are designed so the hard part — the prompt engineering, the structure, the technical setup — is already handled. Your job is the creative judgment: what you want, and whether what came back is right. Start with one workflow, follow the steps, and ask Lucid if you get stuck.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)"><h3>Which is the best LLM?</h3><span class="faq-toggle">+</span></div>
+        <h3 class="faq-question"><button type="button" aria-expanded="false" onclick="toggleFaq(this)">Which is the best LLM?<span class="faq-toggle" aria-hidden="true">+</span></button></h3>
         <div class="faq-answer">
           <p>There isn't a single "best". It depends on the task, and the leaderboard changes constantly. Rather than crowning one, it's more useful to know what each is good at.</p>
           <p>As of early 2026, the major options are Claude, ChatGPT, and Gemini, and all three are highly capable for everyday creative and writing work. For image generation specifically, Lucid uses Nano Banana Pro (via Higgsfield).</p>
@@ -50,13 +56,13 @@
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)"><h3>Is it safe to share data with these AI tools?</h3><span class="faq-toggle">+</span></div>
+        <h3 class="faq-question"><button type="button" aria-expanded="false" onclick="toggleFaq(this)">Is it safe to share data with these AI tools?<span class="faq-toggle" aria-hidden="true">+</span></button></h3>
         <div class="faq-answer"><p>Be thoughtful about what you put in. The key thing to understand: on many tools, free/consumer tiers may use your inputs to train their models, while paid/business tiers usually don't.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)"><h3>What subscriptions do we have?</h3><span class="faq-toggle">+</span></div>
+        <h3 class="faq-question"><button type="button" aria-expanded="false" onclick="toggleFaq(this)">What subscriptions do we have?<span class="faq-toggle" aria-hidden="true">+</span></button></h3>
         <div class="faq-answer">
-          <p>Here's a list of the subscriptions you can use, using teamglamrs@purplle.com:</p>
+          <p>Here's a list of the subscriptions you can use with teamglamrs@purplle.com:</p>
           <ul>
             <li>Higgsfield</li>
             <li>Kling</li>
@@ -71,16 +77,22 @@
 </div>
 
 <script>
-function toggleFaq(questionEl) {
-  const item = questionEl.parentElement;
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
   const answer = item.querySelector('.faq-answer');
   const toggle = item.querySelector('.faq-toggle');
   const isOpen = answer.classList.contains('open');
   document.querySelectorAll('.faq-answer.open').forEach(a => {
     a.classList.remove('open');
-    a.parentElement.querySelector('.faq-toggle').classList.remove('open');
+    const it = a.closest('.faq-item');
+    it.querySelector('.faq-toggle').classList.remove('open');
+    it.querySelector('.faq-question button').setAttribute('aria-expanded', 'false');
   });
-  if (!isOpen) { answer.classList.add('open'); toggle.classList.add('open'); }
+  if (!isOpen) {
+    answer.classList.add('open');
+    toggle.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 </script>
 
